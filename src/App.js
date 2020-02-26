@@ -4,7 +4,6 @@ import Home from './Home';
 import About from './About';
 import Projects from './Projects';
 import Blog from './Blog';
-import Contact from './Contact';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css';
 
@@ -12,57 +11,56 @@ import './App.css';
 export default class App extends React.Component{
 
   state={
-    projectOneExpanded: false,
-    projectTwoExpanded: false,
-    projectThreeExpanded: false,
+    projects: [],
+    projectToExpand: [],
     projectExpanded: false
   }
 
-
-  expandProjectOne=()=>{
-
-    this.setState({
-      projectOneExpanded: !this.state.projectOneExpanded,
-      projectTwoExpanded: false,
-      projectThreeExpanded: false,
-      projectExpanded: !this.state.projectExpanded
-    }) 
-}
-
-  expandProjectTwo=()=>{
-
-    this.setState({
-      projectOneExpanded: false,
-      projectTwoExpanded: !this.state.projectTwoExpanded,
-      projectThreeExpanded: false,
-      projectExpanded: !this.state.projectExpanded
-
+  componentDidMount=()=>{
+    fetch("http://localhost:3000/projects")
+    .then(r=>r.json())
+    .then(data=>{
+      this.setState({
+        projects: data
+      })
     })
   }
 
-  expandProjectThree=()=>{
-
+  expandProject=(project)=>{
+    console.log(project)
     this.setState({
-      projectOneExpanded: false,
-      projectTwoExpanded: false,
-      projectThreeExpanded: !this.state.projectThreeExpanded,
+      projectToExpand: project,
       projectExpanded: !this.state.projectExpanded
-
     })
+  }
+
+  projectsToPassDown=()=>{
+
+    let the_projects= [...this.state.projects]
+
+    if (this.state.projectExpanded){
+      the_projects= this.state.projectToExpand
+      return the_projects
+    }
+
+    else {
+      return the_projects
+    }
+
   }
 
   returnToProjects=()=>{
+    console.log("clicked")
 
     this.setState({
-      projectOneExpanded: false,
-      projectTwoExpanded: false,
-      projectThreeExpanded: false,
+      projectToExpand: [],
       projectExpanded: false
 
     })
   }
 
 render() {
+  console.log(this.state.projects)
   return (
 <div>
   <Router>
@@ -70,17 +68,14 @@ render() {
   <Switch>
   <Route exact path= '/' render={(renderProps) => <Home {...renderProps} />}/>
   <Route exact path= '/about' render={(renderProps) => <About {...renderProps} />}/>
-  <Route exact path= '/projects' render={(renderProps) => <Projects {...renderProps} expandProjectOne={this.expandProjectOne}
-  expandProjectTwo={this.expandProjectTwo}
-  expandProjectThree={this.expandProjectThree}
+  <Route exact path= '/projects' render={(renderProps) => <Projects {...renderProps} 
+  projects={this.projectsToPassDown()}
   projectExpanded={this.state.projectExpanded}
+  expandProject={this.expandProject}
   returnToProjects={this.returnToProjects}
-  projectOneExpanded={this.state.projectOneExpanded}
-  projectTwoExpanded={this.state.projectTwoExpanded}
-  projectThreeExpanded={this.state.projectThreeExpanded}
+  
   />}/>
   <Route exact path= '/blog' render={(renderProps) => <Blog {...renderProps} />}/>
-  <Route exact path= '/contact' render={(renderProps) => <Contact {...renderProps} />}/>
   </Switch>
   </Router>
 </div>
