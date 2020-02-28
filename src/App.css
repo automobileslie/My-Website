@@ -43,8 +43,7 @@ color: rosybrown;
     line-height: 2em;
     margin-left: 15em;
     margin-right: 15em;
-    font-size: 1.25em;
-    
+    font-size: 1.25em; 
 }
 
 #post-list-title{
@@ -65,3 +64,32 @@ color: rosybrown;
     font-size: 1.25em;
 
 }
+
+.coding-in-blog{
+    text-align: left;
+    line-height: 1em;
+    margin-left: 20em;
+    margin-right: 20em;
+    font-size: 1.10em;
+    background-color: lightgray;
+    padding: .5em;
+}
+
+.anchor-tag{
+    line-height: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 22em;
+    margin-right: 22em;
+    text-align: left;
+}
+
+.blog-heading{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+
+
+
+

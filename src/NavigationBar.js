@@ -38,6 +38,14 @@ import './NavBar.css'
           >
             Blog
           </NavLink>
+          <NavLink
+           onClick={props.returnToProjects}
+            activeClassName="navbar-link-active"
+            className="navbar-link"
+            to="/Publications"
+          >
+            Publications
+          </NavLink>
         </nav>  
 }
 

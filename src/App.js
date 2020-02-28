@@ -4,6 +4,7 @@ import Home from './Home';
 import About from './About';
 import Projects from './Projects';
 import Blog from './Blog';
+import Publications from './Publications'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css';
 
@@ -76,6 +77,8 @@ render() {
   
   />}/>
   <Route exact path= '/blog' render={(renderProps) => <Blog {...renderProps} />}/>
+  <Route exact path= '/publications' render={(renderProps) => <Publications {...renderProps} />}/>
+
   </Switch>
   </Router>
 </div>
