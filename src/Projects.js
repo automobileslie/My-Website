@@ -23,7 +23,11 @@ class Projects extends React.Component{
 
                 {this.props.projectExpanded ? 
 
-                    <ProjectDisplay project={this.props.projects} returnToProjects={this.props.returnToProjects}/>
+                    <ProjectDisplay project={this.props.projects} 
+                    returnToProjects={this.props.returnToProjects} 
+                    showPost={this.props.showPost} 
+                    expandPost={this.props.expandPost}
+                    posts={this.props.posts}/>
                 :
                     <React.Fragment>
                     <div className="body">

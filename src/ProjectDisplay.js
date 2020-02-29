@@ -1,7 +1,8 @@
 import React from 'react';
 import videoOne from './videos/PlanAGardenVideo.mp4';
 import videoTwo from './videos/BookandMovieMemoryBankVideo.mp4';
-import videoThree from './videos/NationalParksDemo.mp4'
+import videoThree from './videos/NationalParksDemo.mp4';
+import ExpandPost from './ExpandPost';
 
 
 
@@ -23,17 +24,47 @@ class ProjectDisplay extends React.Component {
 
     }
 
+    showingBlog=()=>{
+
+        if (!this.props.expandPost) {
+
+            let thisVariable= this.props.posts.filter(post=>{
+                return post.title.includes(this.props.project.title)
+            })
+               
+            if (thisVariable.length > 0) { 
+                return <p className="link" onClick={()=>this.props.showPost(this.props.project.title)}>Go to the Blog Post about this project</p>
+            } 
+            else {
+                return  <div>
+                </div>
+            }
+        }
+        else {
+            return <div></div>
+        }
+    }
+
     render(){
-        console.log(this.props)
+        console.log(this.props.posts)
     return(
-        <div className="body">
+        <div className="body"> {!this.props.expandPost ?
+        <div>
             <h1>{this.props.project.title}</h1>
             <br></br>
             <p className="project-description">{this.props.project.description}</p>
             <br></br>
             <video src={this.videoToRender()} width="750" height="500" controls></video>
             <br></br>
+            {this.showingBlog()}
             <p className="link" onClick={this.props.returnToProjects}>Return to Projects Page</p>
+        </div>
+        :
+        <React.Fragment>
+        <ExpandPost  posts={this.props.posts} returnToPosts={this.props.returnToProjects}/>
+        <p className="link" onClick={this.props.returnToProjects}>Return to Projects Page</p>
+        </React.Fragment>
+            }
         </div>
     )
     }

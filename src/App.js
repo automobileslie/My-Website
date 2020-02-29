@@ -14,7 +14,10 @@ export default class App extends React.Component{
   state={
     projects: [],
     projectToExpand: [],
-    projectExpanded: false
+    projectExpanded: false,
+    posts: [],
+    expandPost: false,
+    postToExpand: []
   }
 
   componentDidMount=()=>{
@@ -25,10 +28,50 @@ export default class App extends React.Component{
         projects: data
       })
     })
+
+    fetch("http://localhost:3000/posts")
+        .then(r=>r.json())
+        .then(the_posts=>{
+            console.log(the_posts)
+            this.setState({
+                posts: the_posts            })
+        })
   }
 
+  showPost=(the_post)=>{
+    console.log(the_post)
+    let postForExpanding= this.state.posts.find(post=>{
+      return post.title.includes(the_post)
+    })
+    this.setState({
+        expandPost: !this.state.expandPost,
+        postToExpand: postForExpanding
+    })
+}
+
+returnToPosts=()=>{
+    this.setState({
+    expandPost: !this.state.expandPost,
+    postToExpand: []
+    })
+}
+
+postsToSendDown=()=>{
+
+  let the_posts= [...this.state.posts]
+
+  if (this.state.expandPost){
+    the_posts= [this.state.postToExpand]
+    return the_posts
+  }
+
+  else {
+    return the_posts
+  }
+
+}
+
   expandProject=(project)=>{
-    console.log(project)
     this.setState({
       projectToExpand: project,
       projectExpanded: !this.state.projectExpanded
@@ -51,17 +94,16 @@ export default class App extends React.Component{
   }
 
   returnToProjects=()=>{
-    console.log("clicked")
 
     this.setState({
       projectToExpand: [],
-      projectExpanded: false
-
+      projectExpanded: false,
+      expandPost: false,
+      postToExpand: []
     })
-  }
+  } 
 
 render() {
-  console.log(this.state.projects)
   return (
 <div>
   <Router>
@@ -74,9 +116,17 @@ render() {
   projectExpanded={this.state.projectExpanded}
   expandProject={this.expandProject}
   returnToProjects={this.returnToProjects}
-  
+  showPost={this.showPost}
+  expandPost={this.state.expandPost}
+  posts={this.postsToSendDown()}
   />}/>
-  <Route exact path= '/blog' render={(renderProps) => <Blog {...renderProps} />}/>
+  <Route exact path= '/blog' render={(renderProps) => <Blog {...renderProps} 
+  showPost={this.showPost} 
+  returnToPosts={this.returnToPosts}
+  posts={this.postsToSendDown()}
+  postToExpand={this.state.postToExpand}
+  expandPost={this.state.expandPost}
+  />}/>
   <Route exact path= '/publications' render={(renderProps) => <Publications {...renderProps} />}/>
 
   </Switch>
