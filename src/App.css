@@ -41,8 +41,8 @@ color: rosybrown;
 .blog-content{
     text-align: left;
     line-height: 2em;
-    margin-left: 15em;
-    margin-right: 15em;
+    margin-left: 12em;
+    margin-right: 12em;
     font-size: 1.25em; 
 }
 
@@ -68,8 +68,8 @@ color: rosybrown;
 .coding-in-blog{
     text-align: left;
     line-height: 1em;
-    margin-left: 20em;
-    margin-right: 20em;
+    margin-left: 14em;
+    margin-right: 14em;
     font-size: 1.10em;
     background-color: lightgray;
     padding: .5em;
@@ -79,8 +79,8 @@ color: rosybrown;
     line-height: 1em;
     margin-top: 1em;
     margin-bottom: 1em;
-    margin-left: 22em;
-    margin-right: 22em;
+    margin-left: 15em;
+    margin-right: 15em;
     text-align: left;
 }
 

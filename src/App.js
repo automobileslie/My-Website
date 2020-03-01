@@ -32,7 +32,7 @@ export default class App extends React.Component{
     fetch("http://localhost:3000/posts")
         .then(r=>r.json())
         .then(the_posts=>{
-            console.log(the_posts)
+    
             this.setState({
                 posts: the_posts            })
         })

@@ -6,13 +6,19 @@ export default class ExpandPost extends React.Component{
 
         if (this.props.posts) {
 
-        return this.props.posts[0].paragraphs.map(paragraph=>{
+            return this.props.posts.map(post=>{
+                let changeToArrays=post.paragraphs.split("newpar,")
+                let changeTheseArrays=changeToArrays.filter(description=>{
+                    return description !=="newpar" 
+                })
 
-            if (paragraph.description.includes("{")) {
+                return changeTheseArrays.map(paragraph=>{
 
-                    if (paragraph.description.includes("/n")) {
+                    if (paragraph.includes("{")) {
 
-                        let newParagraphArray= paragraph.description.split("/n")
+                    if (paragraph.includes("/n")) {
+
+                        let newParagraphArray= paragraph.split("/n")
 
                         let newArray=newParagraphArray.filter(description=>{
                             return description !=="/n"
@@ -26,14 +32,32 @@ export default class ExpandPost extends React.Component{
 
                     else {
                     return <div className="coding-in-blog">
-                    <p>{paragraph.description}</p>
+                    <p>{paragraph}</p>
                     </div>
                     }   
             }
 
-            else if (paragraph.description.includes("/anchor")) {
+            else if (paragraph.includes("SCREENSHOT")) {
+                let aNewParagraph= paragraph.split(" SCREENSHOT")
 
-                    let aNewParagraphArray= paragraph.description.split("/anchor")
+                    let newArray=aNewParagraph.filter(description=>{
+                        return description !==" SCREENSHOT"
+                    })
+
+                   return <div> {newArray.map(line=>{
+                       console.log(line)
+                        return <img src={require(`./Images/${line}`)} alt={line} />
+
+                        
+                    })}
+                    <br></br>
+                    </div>
+
+            }
+
+            else if (paragraph.includes("/anchor")) {
+
+                    let aNewParagraphArray= paragraph.split("/anchor")
 
                     let aNewArray=aNewParagraphArray.filter(description=>{
                         return description !=="/anchor"
@@ -46,9 +70,9 @@ export default class ExpandPost extends React.Component{
                     </div>
             }
 
-            else if (paragraph.description.includes("/heading")) {
+            else if (paragraph.includes("/heading")) {
 
-                let thisNewParagraphArray= paragraph.description.split("/heading")
+                let thisNewParagraphArray= paragraph.split("/heading")
 
                 let thisNewArray=thisNewParagraphArray.filter(description=>{
                     return description !=="/heading"
@@ -62,15 +86,17 @@ export default class ExpandPost extends React.Component{
             
 
             else {
-                return <div><p className= "blog-content"> {paragraph.description} </p>
+                return <div><p className= "blog-content"> {paragraph} </p>
                 </div>
             }
         })
-
+    })
         }
+
         else {
             return <div></div>
         }
+   
     }
 
 
