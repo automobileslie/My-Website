@@ -37,19 +37,11 @@ export default class ExpandPost extends React.Component{
                     }   
             }
 
-            else if (paragraph.includes("SCREENSHOT")) {
-                let aNewParagraph= paragraph.split(" SCREENSHOT")
+            else if (paragraph.includes("./Images/")) {
+                console.log(paragraph)
 
-                    let newArray=aNewParagraph.filter(description=>{
-                        return description !==" SCREENSHOT"
-                    })
-
-                   return <div> {newArray.map(line=>{
-                       console.log(line)
-                        return <img src={require(`./Images/${line}`)} alt={line} />
-
-                        
-                    })}
+                   return <div className="container-for-screenshots">
+                        <img className="screenshots-for-blog"src={require(`${paragraph.trim()}`)} alt={paragraph} />
                     <br></br>
                     </div>
 
