@@ -95,6 +95,44 @@ color: rosybrown;
     width: 60em;
 }
 
+.images-for-homepage{
+    width: 30em;
+}
+
+
+.publications-book-container{
+    display: flex;
+    margin: 4em;
+    justify-content: space-evenly;
+}
+
+.publication-book-tile{
+    align-self: auto;
+    width: 25em;
+    height: 40em;
+}
+
+.book-image{
+    width: 95%;
+    height: 90%;
+}
+
+.book-image-on-show-page{
+    width: 25em;
+    height: 35em
+}
+
+.book-description{
+    text-align: left;
+    margin-left: 18em;
+    margin-right:18em;
+}
+
+
+   
+
+
+
 
 
 
