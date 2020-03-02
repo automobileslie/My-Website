@@ -1,65 +1,48 @@
 import React from 'react';
-// import { pdfjs } from 'react-pdf';
+import Pdf from './Carlie_Anglemire_resume.pdf';
 
 class Home extends React.Component{
 
-    state={
-        currentImage: 0
 
-    }
 
-    componentDidMount=()=>{
 
-        let settingInterval=()=>{
-            if (this.state.currentImage <= 0) {
-                this.setState({
-            currentImage: this.state.currentImage + 1})
-        }
+render(){
+    return(
+        <div className="body">
+
+            <h1>Carlie Anglemire</h1>
+
+            <div className="container-for-home-page">
             
-            else {
-                this.setState({
-                    currentImage: this.state.currentImage -1 
-                })
-            }
-        }
+            <img className="profile-photo" src={require("./Images/profile_photo.jpg")} alt={"Carlie Anglemire"}/>
+            
 
-        setInterval(settingInterval, 5000)
+                <div className="second-container-for-home-page">
 
-    }
+                    <div className="profile-description">
+                    <p>Carlie Anglemire is a full stack web developer who graduated from the Software Engineering Program at the Flatiron School.
+                    She enjoys creating web appliations that are user-friendly with React and Ruby on Rails. She could, and sometimes does, spend all day splitting strings.</p>
+                    <p>
+                    In Carlie's former life she earned a PhD in Philosophy at Stony Brook University, writing a dissertation centered on topics in Ethics and Aesthetics. A book and an essay by Jean-Luc Nancy that she translated from French into English while at Stony Brook were published by Fordham University Press. Carlie also taught Philosophy to undergraduate students at a few universities, and her experiences as an educator inform the work she does now.</p>
+                    <p>Other than programming, some of the things that Carlie loves include learning languages, writing, cooking, and gardening.</p>
+                    </div>
+            
+                    <div className="links-on-home-page">
+                    <a className="link" href={Pdf} target = "_blank" rel="noopener noreferrer">Resume</a> | 
+                    <a className="link" href="https://github.com/automobileslie" target = "_blank" rel="noopener noreferrer"> Github</a> | 
+                    <a className="link" href="http://www.linkedin.com/in/carlie-anglemire" target = "_blank" rel="noopener noreferrer"> LinkedIn</a>                     
+                    </div>
 
-    renderImages=()=>{
+                </div>
 
-        const imagesForHomePage= [
-            {img: "./Images/a_zinnia.jpg", name: "pink Zinnia"}, 
-            {img: "./Images/profile_photo.jpg", name: "profile picture"},
+            </div>
 
-
-        ]
-        
-
-        return <div>     
-                    <img className="images-for-homepage" src={require(`${imagesForHomePage[this.state.currentImage].img}`)} alt={imagesForHomePage[this.state.currentImage].name} />
-             </div>
-
-    }
-
-
-
-render(){    
-
-return (
-    <div className="body">
-        <h1>Carlie Anglemire</h1>
-        <br></br>
-        <div>{this.renderImages()}
-        </div>
-
-
-    </div>
-)
+</div>
+       
+    )
+}
 }
 
-
-}
+    
 
 export default Home;

@@ -1,7 +1,6 @@
 import React from 'react';
 import NavigationBar from './NavigationBar';
 import Home from './Home';
-import About from './About';
 import Projects from './Projects';
 import Blog from './Blog';
 import Publications from './Publications'
@@ -109,7 +108,6 @@ render() {
     <NavigationBar returnToProjects={this.returnToProjects}/>
   <Switch>
   <Route exact path= '/' render={(renderProps) => <Home {...renderProps} />}/>
-  <Route exact path= '/about' render={(renderProps) => <About {...renderProps} />}/>
   <Route exact path= '/projects' render={(renderProps) => <Projects {...renderProps} 
   projects={this.projectsToPassDown()}
   projectExpanded={this.state.projectExpanded}
