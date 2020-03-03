@@ -21,6 +21,7 @@ italicizeTheTitle=()=>{
                             <i>{changeTheDescription[0]}</i>
                            {changeTheDescription[1]}
                            <a className="link" target="_blank" rel="noopener noreferrer" href="https://www.stonybrook.edu/commcms/philosophy/people/_faculty/byrne.php">{changeTheDescription[2]}</a>
+                           <p>{changeTheDescription[3]}</p>
                            </p>
                            </React.Fragment>
                             
