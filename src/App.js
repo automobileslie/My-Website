@@ -7,8 +7,6 @@ import Publications from './Publications'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css';
 
-const BASE_URL = "https://carlie-first-website-api.herokuapp.com/"
-
 
 export default class App extends React.Component{
 
