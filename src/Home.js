@@ -1,5 +1,5 @@
 import React from 'react';
-import Pdf from './Carlie_Anglemire_resume.pdf';
+import Pdf from './C_Anglemire_resume.pdf';
 
 class Home extends React.Component{
 
