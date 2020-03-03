@@ -25,7 +25,7 @@ export default class ExpandPost extends React.Component{
                         })
 
                        return <div className="coding-in-blog">{newArray.map(line=>{
-                            return <p >{line}</p>
+                            return <p>{line}</p>
                         })}
                         </div>
                     }
@@ -37,14 +37,29 @@ export default class ExpandPost extends React.Component{
                     }   
             }
 
+            else if (paragraph.includes("embed")){
+                
+                return <div >
+                <iframe width='680' height='382' src= {`${paragraph}`} title= {paragraph} frameBorder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>
+             </div>
+ 
+             }
+
+
+
             else if (paragraph.includes("./Images/")) {
-                console.log(paragraph)
 
-                   return <div className="container-for-screenshots">
-                        <img className="screenshots-for-blog"src={require(`${paragraph.trim()}`)} alt={paragraph} />
-                    <br></br>
-                    </div>
+                if (post.title === "Time and Greetings in a JavaScript Function") {
+                    return <img className="other-screenshots-for-blog"src={require(`${paragraph.trim()}`)} alt={paragraph} />
+                }
 
+                else if (post.title === "The Split Method and the Power of Punctuation"){
+                    return <img className="other-screenshots-for-blog"src={require(`${paragraph.trim()}`)} alt={paragraph} />
+                }
+
+                else{
+                   return <img className="screenshots-for-blog"src={require(`${paragraph.trim()}`)} alt={paragraph} />
+                }
             }
 
             else if (paragraph.includes("/anchor")) {

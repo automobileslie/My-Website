@@ -14,10 +14,14 @@ italicizeTheTitle=()=>{
                             return description !=="/title"
                         })
 
+                    console.log(changeTheDescription)
+
                        return <React.Fragment>
                            <p>
                             <i>{changeTheDescription[0]}</i>
-                           {changeTheDescription[1]}</p>
+                           {changeTheDescription[1]}
+                           <a className="link" target="_blank" rel="noopener noreferrer" href="https://www.stonybrook.edu/commcms/philosophy/people/_faculty/byrne.php">{changeTheDescription[2]}</a>
+                           </p>
                            </React.Fragment>
                             
                         

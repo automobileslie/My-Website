@@ -20,9 +20,9 @@ class Blog extends React.Component{
         <div>
             <h1>Blog</h1>
             <div className="blog-container">
-            <p className="blog-list">
+            <div className="blog-list">
             {this.displayPosts()}
-            </p>
+            </div>
             <div className="blog-intro">
                 <p>These posts can also be found at <a className="link" href="https://medium.com/@carlie.anglemire" target = "_blank" rel="noopener noreferrer">https://medium.com/@carlie.anglemire</a></p>
                 </div>
