@@ -29,15 +29,23 @@ class Projects extends React.Component{
                     expandPost={this.props.expandPost}
                     posts={this.props.posts}/>
                 :
+                <React.Fragment>
+                {this.props.projects.length < 1 ?
+                    <React.Fragment>
+                    <h1>Loading projects</h1>
+                    </React.Fragment>
+                    : 
                     <React.Fragment>
                     <div className="body">
-                    <h1>Projects</h1>
+                    <h1 className="messages-for-loading">Projects</h1>
                     <div className="project-tile-container">
                     {this.displayProjectTiles()}
                     </div>
                     </div>
                     </React.Fragment>
                 }
+                </React.Fragment>
+            }
             </React.Fragment>
         )
     }    
