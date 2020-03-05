@@ -14,9 +14,6 @@ export default class ExpandPost extends React.Component{
 
                 return changeTheseArrays.map(paragraph=>{
 
-                       
-                    }
-
                     if (paragraph.includes("{")) {
 
                         if (paragraph.includes("'{}'")){
@@ -60,8 +57,6 @@ export default class ExpandPost extends React.Component{
              </div>
  
              }
-
-
 
             else if (paragraph.includes("./Images/")) {
 
