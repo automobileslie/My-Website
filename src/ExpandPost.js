@@ -14,11 +14,11 @@ export default class ExpandPost extends React.Component{
 
                 return changeTheseArrays.map(paragraph=>{
 
-                    if (paragraph.includes("{}")){
-                        let splittingNewPar= paragraph.split("{}")
+                    if (paragraph.includes("'{}'")){
+                        let splittingNewPar= paragraph.split("'{}'")
 
                         let filteringSplittingNewPar=splittingNewPar.filter(description=>{
-                            return description !=="{}"
+                            return description !=="'{}'"
                         })
 
                        return <div className="coding-in-blog">{filteringSplittingNewPar.map(line=>{
