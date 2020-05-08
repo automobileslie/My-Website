@@ -20,7 +20,7 @@ export default class App extends React.Component{
   }
 
   componentDidMount=()=>{
-    fetch("https://carlie-first-website-api.herokuapp.com/projects")
+    fetch("https://localhost:3000/projects")
     .then(r=>r.json())
     .then(data=>{
       this.setState({
@@ -28,7 +28,7 @@ export default class App extends React.Component{
       })
     })
 
-    fetch("https://carlie-first-website-api.herokuapp.com/posts")
+    fetch("https://localhost:3000/posts")
         .then(r=>r.json())
         .then(the_posts=>{
     
