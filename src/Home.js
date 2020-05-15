@@ -14,7 +14,7 @@ render(){
 
             <div className="container-for-home-page">
             
-            <img className="profile-photo" src={require("./Images/profile_picture.jpeg")} alt={"Carlie Anglemire"}/>
+            <img className="profile-photo" src={require("./Images/Profile_picture.jpeg")} alt={"Carlie Anglemire"}/>
             
 
                 <div className="second-container-for-home-page">
