@@ -29,12 +29,12 @@ export default class ExpandPost extends React.Component{
                             </div>
                         }
 
-                    else if (paragraph.includes("/n")) {
+                    else if (paragraph.includes("\n")) {
 
-                        let newParagraphArray= paragraph.split("/n")
+                        let newParagraphArray= paragraph.split("\n")
 
                         let newArray=newParagraphArray.filter(description=>{
-                            return description !=="/n"
+                            return description !=="\n"
                         })
 
                        return <div className="coding-in-blog">{newArray.map(line=>{
