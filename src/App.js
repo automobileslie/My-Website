@@ -23,6 +23,9 @@ export default class App extends React.Component{
     fetch("http://localhost:3000/projects")
     .then(r=>r.json())
     .then(data=>{
+
+      console.log(data)
+      
       this.setState({
         projects: data
       })
