@@ -1,3 +1,9 @@
+/* body{
+    display: flex;
+    justify-content: space-around;
+
+} */
+
 .link{
     color: black;
     text-decoration: none;
