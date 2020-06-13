@@ -22,10 +22,7 @@ export default class App extends React.Component{
   componentDidMount=()=>{
     fetch("https://tranquil-citadel-59605.herokuapp.com/projects")
     .then(r=>r.json())
-    .then(data=>{
-
-      console.log(data)
-      
+    .then(data=>{      
       this.setState({
         projects: data
       })
@@ -106,7 +103,7 @@ postsToSendDown=()=>{
 
 render() {
   return (
-<div>
+<div className="container-for-whole-page">
   <Router>
     <NavigationBar returnToProjects={this.returnToProjects}/>
   <Switch>

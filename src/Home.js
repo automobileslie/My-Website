@@ -8,16 +8,16 @@ class Home extends React.Component{
 
 render(){
     return(
-        <div className="body">
+        <div className="home-page">
 
-            <h1>Carlie Anglemire</h1>
+        <h1 className="heading">Carlie Anglemire</h1>
 
             <div className="container-for-home-page">
+
             
             <img className="profile-photo" src={require("./Images/Profile_picture.jpeg")} alt={"Carlie Anglemire"}/>
-            
 
-                <div className="second-container-for-home-page">
+            <div className="second-container-for-home-page">
 
                     <div className="profile-description">
                     <p>Carlie Anglemire is a full stack web developer who graduated from the Software Engineering Program at the Flatiron School.
@@ -33,8 +33,9 @@ render(){
                     <a className="link" href="http://www.linkedin.com/in/carlie-anglemire" target = "_blank" rel="noopener noreferrer"> LinkedIn</a>                     
                     </div>
 
-                </div>
 
+            </div>
+            
             </div>
 
 </div>
