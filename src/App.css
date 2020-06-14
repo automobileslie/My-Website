@@ -319,40 +319,45 @@ text-align: center
 
 /* style for blog index page */
 
+
+@media screen and (max-width: 800px){
+
+.container-for-blog-index{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+}
+
 @media screen and (max-width: 800px){
     .blog-container{
         display: flex;
         justify-content: center;
-        flex-direction: column;
+        /* flex-direction: column; */
     }
+}
+
+.blog-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: row
 }
 
 .blog-intro{
     text-align: left;
-    width: 30%;
+    width: 80%;
     line-height: 150%;
     margin-top: 1%;
     margin-right: 5%;
     font-weight: 125%;
-}
-
-@media screen and (max-width: 800px){
-    .blog-intro{
-        text-align: left;
-        width: 100%;
-        margin-top: 0%;
-        margin-right: 0%;
-        margin-left: 0%;
-        font-weight: 100%;
-        line-height: 100%;
-        margin-bottom: 5%
-    }
+    margin-left: 5%
 }
 
 .blog-list{
     width: 50%;
     height: 30%;
-    margin-left: 10%;
+    margin-left: 5%;
     margin-top: 2%;
 }
 
