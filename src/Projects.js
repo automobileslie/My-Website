@@ -9,9 +9,8 @@ class Projects extends React.Component{
             return <React.Fragment>
                     <div className="project-tile" onClick={()=>this.props.expandProject(project)}>
                     <img className="project-tile-image" src={require(`${project.image}`)} alt={project.title} />
-                    <p key={project.id} className="link">{project.title}</p>
+                    <p key={project.id} className="titles-for-project-index">{project.title}</p>
                     </div>
-                    <br></br>
                     </React.Fragment>
 
         })
@@ -36,7 +35,7 @@ class Projects extends React.Component{
                     </React.Fragment>
                     : 
                     <React.Fragment>
-                    <div className="body">
+                    <div className="project-index-container">
                     <h1 className="messages-for-loading">Projects</h1>
                     <div className="project-tile-container">
                     {this.displayProjectTiles()}

@@ -46,23 +46,22 @@ class ProjectDisplay extends React.Component {
     }
 
     render(){
-        console.log(this.props.posts)
     return(
-        <div className="body"> {!this.props.expandPost ?
-        <div>
+        <div className="project-show-pages"> {!this.props.expandPost ?
+        <div className="container-for-project-display">
             <h1>{this.props.project.title}</h1>
             <br></br>
             <p className="project-description">{this.props.project.description}</p>
             <br></br>
-            <video src={this.videoToRender()} width="750" height="500" controls></video>
+            <video className="project-demo" src={this.videoToRender()} width="750" height="500" controls></video>
             <br></br>
             {this.showingBlog()}
-            <p className="link" onClick={this.props.returnToProjects}>Return to Projects Page</p>
+            <p className="return-to-projects-index" onClick={this.props.returnToProjects}>Return to Projects Page</p>
         </div>
         :
         <React.Fragment>
         <ExpandPost  posts={this.props.posts} returnToPosts={this.props.returnToProjects}/>
-        <p className="link" onClick={this.props.returnToProjects}>Return to Projects Page</p>
+        <p className="return-to-projects-index" onClick={this.props.returnToProjects}>Return to Projects Page</p>
         </React.Fragment>
             }
         </div>

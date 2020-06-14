@@ -1,6 +1,4 @@
-/* .container-for-whole-page{
-    display: flex;
-} */
+
 
 .link{
     color: black;
@@ -21,16 +19,69 @@ color: rosybrown;
     text-align: center;
 }
 
+/* style for projects */
+
+.messages-for-loading{
+    text-align: center;
+    margin: 4%;
+}
+
+.titles-for-project-index{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    text-align: center
+}
+
+.titles-for-project-index:visited{
+    color: black;
+}
+
+.titles-for-project-index:hover{
+    color: rosybrown;
+}
+
+.project-index-container{
+    margin-left: 1.5%
+}
+
+@media screen and (max-width){
+    .project-index-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    }
+}
+
 .project-tile-container{
-    margin-top: 1em;
     display: flex;
     justify-content: space-evenly;
 }
 
+@media screen and (max-width: 800px){
+    .project-tile-container{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
 .project-tile{
-    align-self: auto;
     width: 38em;
-    height: 38em;
+    height: 40em;
+}
+
+@media screen and (max-width: 800px){
+    .project-tile{
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        margin-top: 4%;
+        margin-bottom: 4%
+
+    }
 }
 
 .project-tile-image{
@@ -38,33 +89,11 @@ color: rosybrown;
     height: 90%;
 }
 
-.blog-content{
-    text-align: left;
-    line-height: 2em;
-    margin-left: 12em;
-    margin-right: 12em;
-    font-size: 1.25em; 
-}
-
-#post-list-title{
-    text-align: left;
-}
-
-.project-description{
-    text-align: left;
-    margin-right: 15em;
-    margin-left: 15em;
-    font-size: 1.25em;
-}
-
-.coding-in-blog{
-    text-align: left;
-    line-height: 1em;
-    margin-left: 14em;
-    margin-right: 14em;
-    font-size: 1.10em;
-    background-color: lightgray;
-    padding: .5em;
+@media screen and (max-width: 800px){
+    .project-tile-image{
+        width: 90%;
+        height: 95%;
+    }
 }
 
 .anchor-tag{
@@ -76,23 +105,46 @@ color: rosybrown;
     text-align: left;
 }
 
-.blog-heading{
-    margin-top: 2em;
-    margin-bottom: 2em;
+/* style for project show page */
+
+.project-show-pages{
+text-align: center
 }
 
-.screenshots-for-blog{
-    margin-left: 6em;
-    margin-right: 6em;
-    width: 60em;
-   
+.project-description{
+    text-align: left;
+    margin-right: 25%;
+    margin-left: 25%;
+    font-size: 125%
 }
 
-.other-screenshots-for-blog{
-    margin-left: 6em;
-    margin-right: 6em;
-    width: 40em;
+@media screen and (max-width: 800px){
+    .project-description{
+        margin-right: 5%;
+        margin-left: 5%;
+        margin-top: 0%;    }
 }
+
+@media screen and (max-width: 800px){
+    .container-for-project-display{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 5%;
+        margin-bottom: 5%
+    }
+}
+
+@media screen and (max-width: 800px){
+    .project-demo{
+        width: 90%;
+        height: 100%;
+        margin-left: 5%;
+        margin-right: 5%
+    }
+}
+
+/* style for publications */
 
 .publications-book-container{
     display: flex;
@@ -138,6 +190,8 @@ color: rosybrown;
     margin-top: 3em;
 }
 
+
+/* style for homepage */
   
 .container-for-home-page{
     display: flex;
@@ -146,9 +200,6 @@ color: rosybrown;
 
 @media screen and (max-width: 800px ){
     .container-for-home-page{
-    /* display: flex; 
-    justify-content: center;
-    flex-direction: column; */
     text-align: center;
     display: flex;
     flex-direction: column
@@ -206,9 +257,7 @@ color: rosybrown;
         margin-left: 0;
         text-align: center;
         width: 100%;
-        height: 100%;
-
-       
+        height: 100%;     
 }
 }
 
@@ -221,32 +270,121 @@ color: rosybrown;
     }
 }
 
-.blog-container{
-    display: flex;
-    justify-content: center;
+/* style for blogs */
+
+.blog-index-heading{
+    text-align: center;
+    margin-top: 5%
+}
+
+.blog-content{
+    text-align: left;
+    line-height: 2em;
+    margin-left: 12em;
+    margin-right: 12em;
+    font-size: 1.25em; 
+}
+
+#post-list-title{
+    text-align: left;
+}
+
+.blog-heading{
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.screenshots-for-blog{
+    margin-left: 6em;
+    margin-right: 6em;
+    width: 60em;
+   
+}
+
+.other-screenshots-for-blog{
+    margin-left: 6em;
+    margin-right: 6em;
+    width: 40em;
+}
+
+.coding-in-blog{
+    text-align: left;
+    line-height: 1em;
+    margin-left: 14em;
+    margin-right: 14em;
+    font-size: 1.10em;
+    background-color: lightgray;
+    padding: .5em;
+}
+
+/* style for blog index page */
+
+@media screen and (max-width: 800px){
+    .blog-container{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
 }
 
 .blog-intro{
     text-align: left;
     width: 30%;
-    line-height: 2.5em;
-    margin-top: 2em;
-    margin-right: 15em;
-    font-weight: .25em;
+    line-height: 150%;
+    margin-top: 1%;
+    margin-right: 5%;
+    font-weight: 125%;
+}
+
+@media screen and (max-width: 800px){
+    .blog-intro{
+        text-align: left;
+        width: 100%;
+        margin-top: 0%;
+        margin-right: 0%;
+        margin-left: 0%;
+        font-weight: 100%;
+        line-height: 100%;
+        margin-bottom: 5%
+    }
 }
 
 .blog-list{
-    width: 60em;
-    height: 30em;
-    margin-left: 7em;
-    margin-top: 2em;
+    width: 50%;
+    height: 30%;
+    margin-left: 10%;
+    margin-top: 2%;
 }
 
-.messages-for-loading{
+@media screen and (max-width: 800px){
+    .blog-list{
+        
+        width: 80%;
+        height: 80%;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 0%
+    }
+}
+
+.return-to-projects-index{
     text-align: center;
-    margin: 2em;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
 }
 
+.return-to-projects-index:visited{
+    color: black;
+  }
+
+.return-to-projects-index:hover {
+color: rosybrown;
+}
+
+.heading-for-blog-expanded{
+    margin-top: 5%
+}
 
 
 

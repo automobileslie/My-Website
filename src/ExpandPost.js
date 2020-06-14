@@ -120,8 +120,8 @@ export default class ExpandPost extends React.Component{
 
     render(){
         return(
-            <div className="body">
-            <h1>{this.props.posts[0].title}</h1>
+            <div className="project-show-pages">
+            <h1 className="heading-for-blog-expanded">{this.props.posts[0].title}</h1>
             <br></br>
             {this.expandingPost()}
             </div>
