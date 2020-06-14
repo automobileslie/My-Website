@@ -437,14 +437,6 @@ justify-content: center;
     }
 }
 
-.coding-in-blog{
-    text-align: left;
-    margin-left: 30%;
-    margin-right: 30%;
-    background-color: lightgray;
-    padding: 2%;
-    width: 15%;
-}
 
 .lines-of-code{
     font-size: 200%;
@@ -454,6 +446,16 @@ justify-content: center;
     .lines-of-code{
     font-size: 125%
     }
+}
+
+.coding-in-blog{
+    text-align: left;
+    margin-left: 25%;
+    margin-right: 25%;
+    background-color: lightgray;
+    padding: 2%;
+    width: 100%;
+    font-size: 50%
 }
 
 @media screen and (max-height: 800px){
