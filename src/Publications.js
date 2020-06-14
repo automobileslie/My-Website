@@ -35,7 +35,7 @@ returnToPublicationsPage=()=>{
     whichToDisplay=()=>{
         if (!this.state.expandBook){
             return <React.Fragment>
-            <h1>Publications</h1>
+            <h1 className="heading-for-publication-page">Publications</h1>
             <div className="publications-book-container">
             {this.displayBooks()}
             </div>

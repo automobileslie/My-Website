@@ -37,7 +37,7 @@ italicizeTheTitle=()=>{
     render(){
         return(
         <React.Fragment>
-            <h1>{this.props.bookExpanded.title}</h1>
+            <h1 className="heading-for-publication-showpage">{this.props.bookExpanded.title}</h1>
             <div className="book-container-on-show-page">
             <a target="_blank" rel="noopener noreferrer" href={this.props.bookExpanded.url}> <img className="book-image-on-show-page" src={require(`${this.props.bookExpanded.image.trim()}`)} alt={this.props.bookExpanded.title}/> </a>
             <div div className="book-description">
