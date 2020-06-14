@@ -52,10 +52,7 @@ export default class ExpandPost extends React.Component{
 
             else if (paragraph.includes("embed")){
                 
-                return <div >
-                <iframe width='680' height='382' src= {`${paragraph}`} title= {paragraph} frameBorder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>
-             </div>
- 
+                return <iframe className="video-for-blog-post" width='680' height='382' src= {`${paragraph}`} title= {paragraph} frameBorder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>
              }
 
             else if (paragraph.includes("./Images/")) {
@@ -104,8 +101,8 @@ export default class ExpandPost extends React.Component{
             
 
             else {
-                return <div><p className= "blog-content"> {paragraph} </p>
-                </div>
+                return <p className= "blog-content"> {paragraph} </p>
+                
             }
         })
     })
@@ -120,11 +117,12 @@ export default class ExpandPost extends React.Component{
 
     render(){
         return(
-            <div className="project-show-pages">
+            <div className="expanded-blog-post">
             <h1 className="heading-for-blog-expanded">{this.props.posts[0].title}</h1>
             <br></br>
             {this.expandingPost()}
-            </div>
+             </div>
+            
         )
     }
 }

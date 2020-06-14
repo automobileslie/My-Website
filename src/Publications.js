@@ -48,9 +48,8 @@ returnToPublicationsPage=()=>{
     }
 
     render(){
-        console.log(this.state.bookExpanded)
         return(
-            <div className="body">
+            <div className="container-for-publication-index">
                 {this.whichToDisplay()}
                 
             </div>

@@ -97,11 +97,10 @@ color: rosybrown;
 }
 
 .anchor-tag{
-    line-height: 1em;
-    margin-top: 1em;
-    margin-bottom: 1em;
-    margin-left: 15em;
-    margin-right: 15em;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 20%;
+    margin-right: 20%;
     text-align: left;
 }
 
@@ -146,6 +145,19 @@ text-align: center
 
 /* style for publications */
 
+.container-for-publication-index{
+    text-align: center;
+}
+
+@media screen and (max-width: 800px){
+    .container-for-publication-index{
+        text-align: center;
+        display:flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
 .heading-for-publication-page{
     text-align: center;
     margin-top: 5%
@@ -153,20 +165,36 @@ text-align: center
 
 .heading-for-publication-showpage{
     text-align: center;
-    margin-top: 5%
-    
+    margin-top: 5%   
 }
 
 .publications-book-container{
     display: flex;
-    margin-top: 3em;
+    margin-top: 5%;
     justify-content: space-evenly;
+    margin-bottom: 5%
+} 
+
+ @media screen and (max-width: 800px){
+    .publications-book-container{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
 }
 
 .publication-book-tile{
-    align-self: auto;
     width: 25em;
     height: 35em;
+}
+
+@media screen and (max-width: 800px){
+    .publication-book-tile{
+       width: 100%;
+       height: 100%;
+       margin-bottom: 2%;
+       margin-top: 2%
+    }
 }
 
 .book-image{
@@ -174,31 +202,72 @@ text-align: center
     height: 100%;
 }
 
+@media screen and (max-width: 800px){
+    .book-image{
+        width: 50%;
+        height: 60%;
+        text-align: center;
+    }
+}
+
 .book-container-on-show-page{
     display: flex;
     justify-content: center;
+    flex-direction: row
+}
+
+@media screen and (max-width: 800px){
+    .book-container-on-show-page{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
 }
 
 .book-image-on-show-page{
-    width: 20em;
-    height: 30em;
-    margin-left: 5em;
-    margin-right: 2em;
-    margin-top: 1em;
-   
+    width: 100%;
+    height: 100%;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 5%;
+}
+
+@media screen and (max-width: 800px){
+    .book-image-on-show-page{
+        width: 60%;
+        height: 60%;
+    }
 }
 
 .book-description{
-    margin-top: 1em;
+    margin-top: 2%;
     text-align: left;
    width: 20%;
    height: 35%;
-   margin-right: 5em;
-   margin-top: 3em;
+   margin-left: 5%;
+   margin-top: 2%;
+}
+
+@media screen and (max-width: 800px){
+    .book-description{
+
+        width: 80%;
+        height: 80%;
+        margin-top: 2%;
+        margin-right: 5%;
+        margin-left: 10%
+    }
 }
 
 .return-to-publications-link{
-    margin-top: 3em;
+    margin-top: 2%;
+}
+
+@media screen and (max-width: 800px){
+    .return-to-publications-link{
+        text-align: center;
+        margin-bottom: 5%
+    }
 }
 
 
@@ -207,6 +276,8 @@ text-align: center
 .container-for-home-page{
     display: flex;
     justify-content: center;
+    margin-bottom: 5%
+
 }
 
 @media screen and (max-width: 800px ){
@@ -226,8 +297,8 @@ text-align: center
 }
 
 .profile-photo{
-    width: 30%;
-    height: 35%;
+    width: 25%;
+    height: 30%;
     margin-left: 2%;
     margin-right: 2%;
     margin-top: 2%;
@@ -238,7 +309,7 @@ text-align: center
     text-align: center;
     width: 50%;
     margin-right: 25%;
-    margin-left: 25%
+    margin-left: 25%;
 }
 }
 
@@ -275,13 +346,17 @@ text-align: center
 @media screen and (max-width: 800px){
     .profile-description{
         text-align: left;
-        margin-left: 10%;
-        margin-right: 10%
+        margin-left: 15%;
+        margin-right: 15%
       
     }
 }
 
 /* style for blogs */
+
+.expanded-blog-post{
+    text-align: center
+}
 
 .blog-index-heading{
     text-align: center;
@@ -290,10 +365,20 @@ text-align: center
 
 .blog-content{
     text-align: left;
-    line-height: 2em;
-    margin-left: 12em;
-    margin-right: 12em;
-    font-size: 1.25em; 
+    line-height: 150%;
+    margin-left: 20%;
+    margin-right: 20%;
+    font-size: 120%; 
+}
+
+@media screen and (max-width: 800px){
+    .blog-content{
+        text-align: left;
+        line-height: 125%;
+        margin-left: 15%;
+        margin-right: 15%;
+        font-size: 110%
+    }
 }
 
 #post-list-title{
@@ -301,31 +386,41 @@ text-align: center
 }
 
 .blog-heading{
-    margin-top: 2em;
-    margin-bottom: 2em;
+    margin-top: 5%;
+    margin-bottom: 2%;
 }
 
 .screenshots-for-blog{
-    margin-left: 6em;
-    margin-right: 6em;
-    width: 60em;
+    margin-left: 20%;
+    margin-right: 20%;
+    width: 50%;
    
 }
 
 .other-screenshots-for-blog{
-    margin-left: 6em;
-    margin-right: 6em;
-    width: 40em;
+    margin-left: 20%;
+    margin-right: 20%;
+    width: 50%;
 }
 
 .coding-in-blog{
     text-align: left;
-    line-height: 1em;
-    margin-left: 14em;
-    margin-right: 14em;
-    font-size: 1.10em;
+    margin-left: 20%;
+    margin-right: 20%;
     background-color: lightgray;
-    padding: .5em;
+    padding: 2%;
+}
+
+@media screen and (max-height: 800px){
+    .coding-in-blog{
+        margin-right: 15%;
+        margin-left: 15%
+    }
+}
+
+.video-for-blog-post{
+    margin-left: 15%;
+    margin-right: 15%
 }
 
 /* style for blog index page */
@@ -381,6 +476,11 @@ text-align: center
     }
 }
 
+.heading-for-blog-expanded{
+    margin-top: 5%;
+    text-align: center
+}
+
 .return-to-projects-index{
     text-align: center;
     color: black;
@@ -395,15 +495,6 @@ text-align: center
 .return-to-projects-index:hover {
 color: rosybrown;
 }
-
-.heading-for-blog-expanded{
-    margin-top: 5%
-}
-
-
-
-   
-
 
 
 
