@@ -204,8 +204,8 @@ text-align: center
 
 @media screen and (max-width: 800px){
     .book-image{
-        width: 70%;
-        height: 70%;
+        width: 80%;
+        height: 80%;
         text-align: center;
     }
 }
@@ -234,8 +234,8 @@ text-align: center
 
 @media screen and (max-width: 800px){
     .book-image-on-show-page{
-        width: 70%;
-        height: 70%;
+        width: 80%;
+        height: 80%;
     }
 }
 
