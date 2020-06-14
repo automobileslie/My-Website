@@ -23,9 +23,12 @@ export default class ExpandPost extends React.Component{
                                 return description !=="'{}'"
                             })
     
-                           return <div className="coding-in-blog">{filteringSplittingNewPar.map(line=>{
-                                return <p>{line}</p>
+                           return <div className="container-for-expanded-blog-post">
+
+                           <div className="coding-in-blog">{filteringSplittingNewPar.map(line=>{
+                                return <p className="lines-of-code">{line}</p>
                             })}
+                            </div>
                             </div>
                         }
 
@@ -37,15 +40,21 @@ export default class ExpandPost extends React.Component{
                             return description !=="\n"
                         })
 
-                       return <div className="coding-in-blog">{newArray.map(line=>{
-                            return <p>{line}</p>
+                       return <div className="container-for-expanded-blog-post">
+
+                       <div className="coding-in-blog">{newArray.map(line=>{
+                            return <p className="lines-of-code">{line}</p>
                         })}
+                        </div>
                         </div>
                     }
 
                     else {
-                    return <div className="coding-in-blog">
-                    <p>{paragraph}</p>
+                    return <div className="container-for-expanded-blog-post">
+
+                    <div className="coding-in-blog">
+                    <p className="lines-of-code">{paragraph}</p>
+                    </div>
                     </div>
                     }   
             }
@@ -94,7 +103,7 @@ export default class ExpandPost extends React.Component{
                 })
 
                return <div> {thisNewArray.map(line=>{
-                    return <h2 className="blog-heading">{line}</h2>
+                    return <h3 className="blog-heading">{line}</h3>
                 })}
                 </div>
         }
@@ -119,10 +128,9 @@ export default class ExpandPost extends React.Component{
         return(
             <div className="expanded-blog-post">
             <h1 className="heading-for-blog-expanded">{this.props.posts[0].title}</h1>
-            <br></br>
+            
             {this.expandingPost()}
              </div>
-            
         )
     }
 }
