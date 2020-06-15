@@ -23,7 +23,7 @@ export default class ExpandPost extends React.Component{
                                 return description !=="'{}'"
                             })
     
-                           return <div className="container-for-expanded-blog-post">
+                           return <div className="container-for-code-blocks">
 
                            <div className="coding-in-blog">{filteringSplittingNewPar.map(line=>{
                                 return <p className="lines-of-code">{line}</p>
@@ -40,7 +40,7 @@ export default class ExpandPost extends React.Component{
                             return description !=="\n"
                         })
 
-                       return <div className="container-for-expanded-blog-post">
+                       return <div className="container-for-code-blocks">
 
                        <div className="coding-in-blog">{newArray.map(line=>{
                             return <p className="lines-of-code">{line}</p>
@@ -50,7 +50,7 @@ export default class ExpandPost extends React.Component{
                     }
 
                     else {
-                    return <div className="container-for-expanded-blog-post">
+                    return <div className="container-for-code-blocks">
 
                     <div className="coding-in-blog">
                     <p className="lines-of-code">{paragraph}</p>
@@ -61,7 +61,9 @@ export default class ExpandPost extends React.Component{
 
             else if (paragraph.includes("embed")){
                 
-                return <iframe className="video-for-blog-post" width='680' height='382' src= {`${paragraph}`} title= {paragraph} frameBorder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>
+                return <div className="video-container-for-blog">
+                <iframe className="video-for-blog-post" width='680' height='382' src= {`${paragraph}`} title= {paragraph} frameBorder='0' allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture' allowFullScreen></iframe>
+                </div>
              }
 
             else if (paragraph.includes("./Images/")) {

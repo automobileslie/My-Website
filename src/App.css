@@ -361,13 +361,9 @@ text-align: center
         margin-right: 10%;
         width: 50%;
         font-size: 50%;
-        margin-bottom: 5%
+        margin-bottom: 5%;
+        margin-top: 5%
     }
-}
-
-.container-for-expanded-blog-post{
-display: flex;
-justify-content: center;
 }
 
 .expanded-blog-post{
@@ -437,6 +433,19 @@ justify-content: center;
     }
 }
 
+.container-for-code-blocks{
+    display: flex;
+    justify-content: center;
+    margin-right: 20%;
+    margin-left: 20%
+    }
+
+@media screen and (max-width: 800px){
+    .container-for-code-blocks{
+       margin-right: 0%;
+       margin-left: 0%
+    }
+}
 
 .lines-of-code{
     font-size: 200%;
@@ -444,14 +453,14 @@ justify-content: center;
 
 @media screen and (max-width: 800px){
     .lines-of-code{
-    font-size: 125%
+        font-size: 125%
     }
 }
 
 .coding-in-blog{
     text-align: left;
-    margin-left: 25%;
-    margin-right: 25%;
+    margin-left: 30%;
+    margin-right: 30%;
     background-color: lightgray;
     padding: 2%;
     width: 100%;
@@ -460,33 +469,33 @@ justify-content: center;
 
 @media screen and (max-height: 800px){
     .coding-in-blog{
-        margin-right: 10%;
-        margin-left: 10%;
-        font-size: 50%;
-        width: 70%;
+        margin-right: 5%;
+        margin-left: 5%;
+        font-size: 40%;
+        width: 80%;
     }
 }
 
+.video-container-for-blog{
+    text-align: center;
+    margin-right: 20%;
+    margin-left: 20%
+}
+
 .video-for-blog-post{
-    margin-left: 25%;
-    margin-right: 25%;
-    width: 80%;
-    height: 80%;
+    width: 100%
+   
 }
 
 @media screen and (max-height: 800px){
     .video-for-blog-post{
-        width: 80%;
-        height: 80%;
-        margin-right: 5%;
-        margin-left: 5%
+        width: 90%
+       
     }
 }
 
 .heading-for-blog-expanded{
-    margin-top: 5%;
     text-align: center;
-    margin-bottom: 5%
 }
 
 /* style for blog index page */
@@ -551,6 +560,8 @@ justify-content: center;
     color: black;
     text-decoration: none;
     font-weight: bold;
+    margin-bottom: 5%;
+    margin-top: 5%
 }
 
 .return-to-projects-index:visited{
