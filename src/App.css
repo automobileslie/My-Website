@@ -401,7 +401,7 @@ text-align: center
 }
 
 .blog-heading{
-    margin-top: 5%;
+    margin-top: 2%;
     margin-bottom: 2%;
 }
 
@@ -459,8 +459,8 @@ text-align: center
 
 .coding-in-blog{
     text-align: left;
-    margin-left: 30%;
-    margin-right: 30%;
+    margin-left: 10%;
+    margin-right: 10%;
     background-color: lightgray;
     padding: 2%;
     width: 100%;
@@ -478,8 +478,15 @@ text-align: center
 
 .video-container-for-blog{
     text-align: center;
-    margin-right: 20%;
-    margin-left: 20%
+    margin-right: 35%;
+    margin-left: 30%
+}
+
+@media screen and (max-width: 800px){
+    .video-container-for-blog{
+        margin-right: 25%;
+        margin-left: 10%
+    }
 }
 
 .video-for-blog-post{
@@ -489,13 +496,13 @@ text-align: center
 
 @media screen and (max-height: 800px){
     .video-for-blog-post{
-        width: 90%
-       
+        width: 125%
     }
 }
 
 .heading-for-blog-expanded{
     text-align: center;
+    margin: 3%
 }
 
 /* style for blog index page */
@@ -561,7 +568,7 @@ text-align: center
     text-decoration: none;
     font-weight: bold;
     margin-bottom: 5%;
-    margin-top: 5%
+    margin-top: 2%
 }
 
 .return-to-projects-index:visited{

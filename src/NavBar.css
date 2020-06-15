@@ -1,5 +1,6 @@
 .navbar{
    display: flex;
+   margin-top: 1%;
    border-top: .2em solid black;
    border-bottom: .2em solid black;
 }
