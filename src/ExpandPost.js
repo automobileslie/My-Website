@@ -59,6 +59,44 @@ export default class ExpandPost extends React.Component{
                     }   
             }
 
+            else if (paragraph.includes("this-is-code-in-blog")) {
+
+            if (paragraph.includes("\n")) {
+
+                let thisArray=paragraph.split("this-is-code-in-blog")
+
+                let anotherNewArray= thisArray.filter(description=>{
+                    return description !== "this-is-code-in-blog"
+                })
+
+                let newParagraphArray= anotherNewArray.join("").split("\n")
+
+                let newArray=newParagraphArray.filter(description=>{
+                    return description !=="\n"
+                })
+
+               
+               return <div className="container-for-code-blocks">
+
+               <div className="coding-in-blog">{newArray.map(line=>{
+                    return <p className="lines-of-code">{line}</p>
+                })}
+                </div>
+                </div>
+            }
+
+            else {
+
+            return <div className="container-for-code-blocks">
+
+            <div className="coding-in-blog">
+            <p className="lines-of-code">{paragraph}</p>
+            </div>
+            </div>
+            }   
+    }
+
+
             else if (paragraph.includes("embed")){
                 
                 return <div className="video-container-for-blog">
