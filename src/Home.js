@@ -14,7 +14,6 @@ render(){
 
             <div className="container-for-home-page">
 
-            
             <img className="profile-photo" src={require("./Images/Profile_picture.jpeg")} alt={"Carlie Anglemire"}/>
 
             <div className="second-container-for-home-page">
@@ -28,6 +27,7 @@ render(){
                     </div>
             
                     <div className="links-on-home-page">
+                    {/* <a className="link" href={require('./C_Anglemire_resume.pdf')}  target = "_blank" rel="noopener noreferrer">Resume</a> |  */}
                     <a className="link" href={Pdf} target = "_blank" rel="noopener noreferrer">Resume</a> | 
                     <a className="link" href="https://github.com/automobileslie" target = "_blank" rel="noopener noreferrer"> Github</a> | 
                     <a className="link" href="http://www.linkedin.com/in/carlie-anglemire" target = "_blank" rel="noopener noreferrer"> LinkedIn</a>                     
