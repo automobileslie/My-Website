@@ -104,19 +104,35 @@ export default class ExpandPost extends React.Component{
                 </div>
              }
 
-            else if (paragraph.includes("./Images/")) {
+            else if (paragraph.includes("this-is-an-image")) {
 
-                if (post.title === "Time and Greetings in a JavaScript Function") {
-                    return <img className="other-screenshots-for-blog"src={require(`${paragraph.trim()}`)} alt={paragraph} />
-                }
+                // if (post.title === "Time and Greetings in a JavaScript Function") {
+                //     return <img className="other-screenshots-for-blog"src={require(`${paragraph.trim()}`)} alt={paragraph} />
+                // }
 
-                else if (post.title === "The Split Method and the Power of Punctuation"){
-                    return <img className="other-screenshots-for-blog"src={require(`${paragraph.trim()}`)} alt={paragraph} />
-                }
+                // else if (post.title === "The Split Method and the Power of Punctuation"){
+                //     return <img className="other-screenshots-for-blog"src={require(`${paragraph.trim()}`)} alt={paragraph} />
+                // }
 
-                else{
-                   return <img className="screenshots-for-blog"src={require(`${paragraph.trim()}`)} alt={paragraph} />
-                }
+                let paragraphArray= paragraph.trim().split("this-is-an-image")
+
+                console.log(paragraphArray);
+
+                let newArrayForImage=paragraphArray.filter(description=>{
+                    return description !=="this-is-an-image" || description !== ""
+                })
+
+                console.log(newArrayForImage);
+
+            //    return <div> {newArrayForImage.map(line=>{
+                return <img className="screenshots-for-blog"src={require(`${newArrayForImage[0].trim()}`)} alt={newArrayForImage[0]} />
+
+                // })
+            // }
+                // </div>
+
+                
+                
             }
 
             else if (paragraph.includes("/anchor")) {
