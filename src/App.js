@@ -23,9 +23,9 @@ export default class App extends React.Component{
 
   componentDidMount=()=>{
 
-    // fetch("http://localhost:3000/projects")
+    fetch("http://localhost:3000/projects")
 
-    fetch("https://tranquil-citadel-59605.herokuapp.com/projects")
+    // fetch("https://tranquil-citadel-59605.herokuapp.com/projects")
     .then(r=>r.json())
     .then(data=>{      
       this.setState({
@@ -33,8 +33,8 @@ export default class App extends React.Component{
       })
     })
 
-    // fetch("http://localhost:3000/posts")
-    fetch("https://tranquil-citadel-59605.herokuapp.com/posts")
+    fetch("http://localhost:3000/posts")
+    // fetch("https://tranquil-citadel-59605.herokuapp.com/posts")
         .then(r=>r.json())
         .then(the_posts=>{
     
@@ -43,7 +43,8 @@ export default class App extends React.Component{
         })
   }
 
-  showPost=(the_post)=>{
+  showPost=(the_post)=>{ 
+    console.log(the_post);
     let postForExpanding= this.state.posts.find(post=>{
       return post.title.includes(the_post)
     })
@@ -114,6 +115,7 @@ postsToSendDown=()=>{
   })
 }
 
+
 render() {
 
   console.log()
@@ -131,6 +133,8 @@ render() {
   showPost={this.showPost} 
   expandPost={this.state.expandPost}
   posts={this.postsToSendDown()}
+  returnToPosts={this.returnToPosts}
+  postToExpand={this.state.postToExpand}
   />}/>
   <Route exact path= '/about' render={(renderProps) => <About {...renderProps}/>}/>
   <Route exact path= '/projects' render={(renderProps) => <Projects {...renderProps} 

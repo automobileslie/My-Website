@@ -23,12 +23,12 @@ color: rosybrown;
 
 .container-for-home-page{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-direction: column;
     margin-top: 2%;
     margin-right: 15%;
     margin-left: 15%;
-    margin-bottom: 5%;
+    margin-bottom:
 }
 
 .bottom-container{
@@ -36,6 +36,13 @@ color: rosybrown;
     justify-content: center;
     flex-direction: row;
     width: 100%;
+}
+
+@media screen and (max-width: 800px){
+    .bottom-container{
+margin-top: 10%;
+    }
+
 }
 
 .featured-blog{
@@ -112,7 +119,7 @@ text-align: center;
     margin-left: 1.5%
 }
 
-@media screen and (max-width){
+@media screen and (max-width: 800px){
     .project-index-container{
     display: flex;
     justify-content: center;
