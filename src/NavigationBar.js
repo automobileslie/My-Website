@@ -6,7 +6,7 @@ import './NavBar.css'
     const NavigationBar =(props)=> {
 
        return <nav className="navbar">
-          <NavLink
+         <NavLink
            onClick={props.returnToProjects}
             exact
             activeClassName="navbar-link-active"
@@ -14,6 +14,15 @@ import './NavBar.css'
             to="/"
           >
             Home
+          </NavLink>
+          <NavLink
+           onClick={props.returnToProjects}
+            exact
+            activeClassName="navbar-link-active"
+            className="navbar-link"
+            to="/about"
+          >
+            About
           </NavLink>
           <NavLink
             activeClassName="navbar-link-active"
