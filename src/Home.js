@@ -8,7 +8,10 @@ whichToRender=()=>{
     
     if(this.props.expandPost) {
         
-    return <ExpandPost posts={this.props.posts}/>
+    return <React.Fragment>
+        <ExpandPost posts={this.props.posts}/>
+    <p className= "return-to-projects-index" onClick={this.props.returnToPosts}>Return to Previous Page</p>
+    </React.Fragment>
 
     }
 

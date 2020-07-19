@@ -19,13 +19,14 @@ export default class App extends React.Component{
     posts: [],
     expandPost: false,
     postToExpand: [],
+    resumeViewing: false
   }
 
   componentDidMount=()=>{
 
-    // fetch("http://localhost:3000/projects")
+    fetch("http://localhost:3000/projects")
 
-    fetch("https://tranquil-citadel-59605.herokuapp.com/projects")
+    // fetch("https://tranquil-citadel-59605.herokuapp.com/projects")
     .then(r=>r.json())
     .then(data=>{      
       this.setState({
@@ -33,8 +34,8 @@ export default class App extends React.Component{
       })
     })
 
-    // fetch("http://localhost:3000/posts")
-    fetch("https://tranquil-citadel-59605.herokuapp.com/posts")
+    fetch("http://localhost:3000/posts")
+    // fetch("https://tranquil-citadel-59605.herokuapp.com/posts")
         .then(r=>r.json())
         .then(the_posts=>{
     
@@ -77,7 +78,6 @@ postsToSendDown=()=>{
 }
 
   expandProject=(project)=>{
-    console.log(project)
     this.setState({
       projectToExpand: project,
       projectExpanded: !this.state.projectExpanded
@@ -105,7 +105,8 @@ postsToSendDown=()=>{
       projectToExpand: [],
       projectExpanded: false,
       expandPost: false,
-      postToExpand: []
+      postToExpand: [],
+      resumeViewing: false
     })
   } 
 
@@ -115,11 +116,17 @@ postsToSendDown=()=>{
   })
 }
 
+displayResume=()=>{
+
+  this.setState({
+    resumeViewing: !this.state.resumeViewing
+  })
+
+}
 
 render() {
 
-  console.log()
-  return (
+return (
 <div className="container-for-whole-page">
   <Router>
     <NavigationBar returnToProjects={this.returnToProjects}/>
@@ -136,7 +143,10 @@ render() {
   returnToPosts={this.returnToPosts}
   postToExpand={this.state.postToExpand}
   />}/>
-  <Route exact path= '/about' render={(renderProps) => <About {...renderProps}/>}/>
+  <Route exact path= '/about' render={(renderProps) => <About {...renderProps}
+    displayResume={this.displayResume}
+    resumeViewing={this.state.resumeViewing}
+  />}/>
   <Route exact path= '/projects' render={(renderProps) => <Projects {...renderProps} 
   projects={this.projectsToPassDown()}
   projectExpanded={this.state.projectExpanded}

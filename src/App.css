@@ -64,7 +64,6 @@ margin-top: 10%;
 
 .top-container{
     width: 100%;
-    /* justify-content: center; */
 }
 
 .home-page-featured-blog-heading{
@@ -89,9 +88,14 @@ text-align: center;
 
 .sub-heading{
     text-align: center;
-    margin-bottom: 5%;
-    
+    margin-bottom: 5%; 
 }
+
+@media screen and (max-width: 800px){
+    .sub-heading{
+        margin-bottom: 8%;
+    }
+    }
 
 /* style for projects */
 
@@ -379,14 +383,25 @@ text-align: center
 }
 }
 
+.link-on-about-page{
+    margin-left: 2%;
+    margin-right: 2%;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 .links-on-about-page{
-    margin-top: 2em;
-    font-weight: .75em;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-left: 2%;
+    margin-right: 2%;
+    display: flex;
+    justify-content: center;
 }
 
 @media screen and (max-width: 800px){
     .links-on-about-page{
-        font-weight: .75em;
         margin-bottom: 15%
     }
 }
@@ -456,7 +471,8 @@ text-align: center
     margin-left: 20%;
     margin-right: 20%;
     font-size: 100%; 
-    line-height: 150%
+    line-height: 150%;
+    font-size: 120%;;
 }
 
 @media screen and (max-width: 800px){
@@ -510,19 +526,19 @@ text-align: center
 .container-for-code-blocks{
     display: flex;
     justify-content: center;
-    margin-right: 20%;
-    margin-left: 20%
+    margin-right: 14%;
+    margin-left: 14%
     }
 
 @media screen and (max-width: 800px){
     .container-for-code-blocks{
-       margin-right: 0%;
-       margin-left: 0%
+       margin-right: 2%;
+       margin-left: 2%;
     }
 }
 
 .lines-of-code{
-    font-size: 200%;
+    font-size: 2.5em;
 }
 
 @media screen and (max-width: 800px){
@@ -551,9 +567,10 @@ text-align: center
 }
 
 .video-container-for-blog{
-    text-align: center;
-    margin-right: 35%;
-    margin-left: 30%
+    /* /* text-align: center; */
+    margin-right: 33%;
+    margin-left: 20%;
+    margin-bottom: 5%;
 }
 
 @media screen and (max-width: 800px){
@@ -652,6 +669,28 @@ text-align: center
 .return-to-projects-index:hover {
 color: rosybrown;
 }
+
+/* style for resume */
+
+.resume-container{
+    display: flex;
+    justify-content: center;
+   
+}
+   .resume{
+       width: 100%;
+       height: 1000px;
+   }
+
+   @media screen and (max-width: 800px){
+        .resume{
+        width: 600px;
+        height: 600px;
+
+        }
+   }
+
+
 
 
 

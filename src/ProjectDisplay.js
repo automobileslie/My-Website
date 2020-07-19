@@ -56,12 +56,12 @@ class ProjectDisplay extends React.Component {
             <video className="project-demo" src={this.videoToRender()} width="750" height="500" controls></video>
             <br></br>
             {this.showingBlog()}
-            <p className="return-to-projects-index" onClick={this.props.returnToProjects}>Return to Projects Page</p>
+            <p className="return-to-projects-index" onClick={this.props.returnToProjects}>Return to Previous Page</p>
         </div>
         :
         <React.Fragment>
         <ExpandPost  posts={this.props.posts} returnToPosts={this.props.returnToProjects}/>
-        <p className="return-to-projects-index" onClick={this.props.returnToProjects}>Return to Projects Page</p>
+        <p className="return-to-projects-index" onClick={this.props.returnToProjects}>Return to Previous Page</p>
         </React.Fragment>
             }
         </div>
