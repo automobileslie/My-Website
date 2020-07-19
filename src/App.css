@@ -391,6 +391,14 @@ text-align: center
     font-weight: bold;
 }
 
+.link-on-about-page:visited{
+    color: black;
+  }
+
+.link-on-about-page:hover {
+color: rosybrown;
+}
+
 .links-on-about-page{
     margin-top: 2%;
     margin-bottom: 2%;
