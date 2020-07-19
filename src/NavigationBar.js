@@ -25,6 +25,7 @@ import './NavBar.css'
             About
           </NavLink>
           <NavLink
+          onClick={props.returnToProjects}
             activeClassName="navbar-link-active"
             className="navbar-link"
             to="/projects"
