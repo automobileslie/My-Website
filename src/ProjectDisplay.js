@@ -53,9 +53,16 @@ class ProjectDisplay extends React.Component {
             <br></br>
             <p className="project-description">{this.props.project.description}</p>
             <br></br>
+            <div className="github-links-for-projects">
+            <a className="github-link" href={this.props.project.frontend} target = "_blank" rel="noopener noreferrer">Github: Front End</a>
+            <br></br>
+            <a className= "github-link" href={this.props.project.backend} target = "_blank" rel="noopener noreferrer">Github: Back End</a>
+            </div>
+            <br></br>
             <video className="project-demo" src={this.videoToRender()} width="750" height="500" controls></video>
             <br></br>
             {this.showingBlog()}
+            <br></br>
             <p className="return-to-projects-index" onClick={this.props.returnToProjects}>Return to Previous Page</p>
         </div>
         :

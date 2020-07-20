@@ -176,6 +176,28 @@ text-align: center;
 
 /* style for project show page */
 
+.github-links-for-projects{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.github-link{
+    margin-left: 2%;
+    margin-right: 2%;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.github-link:visited{
+    color: black;
+  }
+
+.github-link:hover {
+color: rosybrown;
+}
+
 .project-show-pages{
 text-align: center
 }
