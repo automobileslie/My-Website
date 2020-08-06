@@ -1,5 +1,6 @@
 import React from 'react';
 
+
 export default class Resume extends React.Component{
 
  
@@ -9,7 +10,7 @@ export default class Resume extends React.Component{
 
         <div className="resume-container">
  
-<iframe title="my-resume"src={require("./Images/Carlie_Anglemire_resume.pdf")}className="resume"> </iframe>
+ <iframe title="resume" src={require("./Carlie_Anglemire_Resume.pdf")} className="resume"/>
 </div>
     )
  }
