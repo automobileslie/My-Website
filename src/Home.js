@@ -36,7 +36,7 @@ whichToRender=()=>{
 
             <div className = "bottom-container">
                 <div className = "featured-blog">
-                <img className = "home-page-images" onClick={()=>this.props.showPost("On A Witch Hunt")}src={require("./Images/On_A_Witch_Hunt_Image.jpg")} alt={"On A Witch Hunt"}></img>
+                <img className = "home-page-images" onClick={()=>this.props.showPost("Linked Lists")}src={require("./Images/Linked_List.jpg")} alt={"On A Witch Hunt"}></img>
                 <h2 className = "home-page-featured-blog-heading">Current Blog Post</h2>
                 </div>
             <div className = "current-project">
