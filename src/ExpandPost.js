@@ -122,8 +122,6 @@ export default class ExpandPost extends React.Component{
                     return description !=="this-is-an-image" || description !== ""
                 })
 
-                console.log(newArrayForImage);
-
             //    return <div> {newArrayForImage.map(line=>{
                 return <img className="screenshots-for-blog"src={require(`${newArrayForImage[0].trim()}`)} alt={newArrayForImage[0]} />
 
@@ -181,7 +179,17 @@ export default class ExpandPost extends React.Component{
 
 
     render(){
+
+        console.log(this.props.posts)
         return(
+
+            !this.props.posts ?
+                <React.Fragment>
+                <h1 className= "heading">Loading</h1>
+                </React.Fragment>
+
+                :
+
             <div className="expanded-blog-post">
             <h1 className="heading-for-blog-expanded">{this.props.posts[0].title}</h1>
             

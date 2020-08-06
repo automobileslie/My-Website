@@ -40,7 +40,8 @@ export default class App extends React.Component{
         .then(the_posts=>{
     
             this.setState({
-                posts: the_posts            })
+                posts: the_posts
+              })
         })
   }
 

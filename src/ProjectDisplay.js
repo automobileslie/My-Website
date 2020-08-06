@@ -47,7 +47,7 @@ class ProjectDisplay extends React.Component {
 
     render(){
     return(
-        <div className="project-show-pages"> {!this.props.expandPost ?
+        <div className="project-show-pages"> {!this.props.expandPost && this.props.project ?
         <div className="container-for-project-display">
             <h1>{this.props.project.title}</h1>
             <br></br>
