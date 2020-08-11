@@ -180,10 +180,10 @@ export default class ExpandPost extends React.Component{
 
     render(){
 
-        console.log(this.props.posts.length)
+        console.log(this.props.posts[0])
         return(
 
-            !(this.props.posts.length > 1) ?
+            !(this.props.posts[0]) ?
                 <React.Fragment>
                 <h1 className= "heading">Loading</h1>
                 </React.Fragment>
