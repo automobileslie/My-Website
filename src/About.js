@@ -3,10 +3,23 @@ import Resume from './Resume'
 
 class Home extends React.Component{
 
+state={
+    isHovering: false
+}
+
+changeHovering = () =>{
+    this.setState({
+        isHovering: !this.state.isHovering
+
+    })
+}
+
 
 
 
 render(){
+
+    console.log(this.state.isHovering)
     return(
 
         this.props.resumeViewing ?
@@ -21,7 +34,7 @@ render(){
 
             <div className="container-for-about-page">
 
-            <img className="profile-photo" src={require("./Images/Profile_picture.jpeg")} alt={"Carlie Anglemire"}/>
+            <img className="profile-photo" onMouseOver= {this.changeHovering} onMouseOut = {this.changeHovering} src={require("./Images/Profile_picture.jpeg")} alt={"Carlie Anglemire"}/>
 
             <div className="second-container-for-about-page">
 
