@@ -34,7 +34,15 @@ render(){
 
             <div className="container-for-about-page">
 
+            {!(this.state.isHovering) ? 
+
             <img className="profile-photo" onMouseOver= {this.changeHovering} onMouseOut = {this.changeHovering} src={require("./Images/Profile_picture.jpeg")} alt={"Carlie Anglemire"}/>
+
+            :
+
+            <img className="profile-photo" onMouseOver= {this.changeHovering} onMouseOut = {this.changeHovering} src={require("./Images/Hover_Picture.jpg")} alt={"Carlie Anglemire"}/>
+                    
+            }
 
             <div className="second-container-for-about-page">
 
