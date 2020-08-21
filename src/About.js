@@ -26,11 +26,10 @@ render(){
             <div className="second-container-for-about-page">
 
                     <div className="profile-description">
-                    <p>Carlie Anglemire is a full-stack software engineer who graduated from the Software Engineering Program at the Flatiron School.
-                    She enjoys creating web applications that are user-friendly with React and Ruby on Rails. She could, and sometimes does, spend all day splitting strings.</p>
-                    <p>
-                    In Carlie's former life she earned a PhD in Philosophy at Stony Brook University, writing a dissertation centered on topics in Ethics and Aesthetics. A book and an essay by Jean-Luc Nancy that she translated from French into English while at Stony Brook were published by Fordham University Press. Carlie also taught Philosophy at a few universities, and her experiences as an educator inform the work she does now.</p>
-                    <p>Other than programming, some of the things that Carlie loves include learning languages, writing, cooking, and gardening.</p>
+                    <p>Carlie Anglemire is a full-stack software developer passionate about exercising problem-solving skills and creativity in building applications that help users gain access to information, entertainment, resources, and social networks on-line​. 
+                    With experience in HTML, CSS, JavaScript, Ruby, Java, C, React, Ruby on Rails, and SQL, she became interested in software engineering after developing her logic and critical thinking skills as a Philosophy PhD focused on topics in ethics and aesthetics.</p> 
+                    <p>In other words, she could, and sometimes does, spend all day splitting strings.</p>
+                    <p>In addition to being a software engineer, Carlie is a published translator and loves writing, learning languages, cooking, and gardening.</p>
                     </div>
             
                     <div className="links-on-about-page">
