@@ -36,7 +36,7 @@ whichToRender=()=>{
 
             <div className = "bottom-container">
                 <div className = "featured-blog">
-                <img className = "home-page-images" onClick={()=>this.props.showPost("Recursion (Again)")}src={require("./Images/Access_Labs.jpg")} alt={"Recursion (Again)"}></img>
+                <img className = "home-page-images" onClick={()=>this.props.showPost("Binary Search Tree and Me")}src={require("./Images/Binary_Search_Tree.png")} alt={"Recursion (Again)"}></img>
                 <h2 className = "home-page-featured-blog-heading">Current Blog Post</h2>
                 </div>
             <div className = "current-project">
