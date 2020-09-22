@@ -25,9 +25,9 @@ export default class App extends React.Component{
 
   componentDidMount=()=>{
 
-    // fetch("http://localhost:3000/projects")
+    fetch("http://localhost:3000/projects")
 
-    fetch("https://tranquil-citadel-59605.herokuapp.com/projects")
+    // fetch("https://tranquil-citadel-59605.herokuapp.com/projects")
     .then(r=>r.json())
     .then(data=>{      
       this.setState({
@@ -35,8 +35,8 @@ export default class App extends React.Component{
       })
     })
 
-    // fetch("http://localhost:3000/posts")
-    fetch("https://tranquil-citadel-59605.herokuapp.com/posts")
+    fetch("http://localhost:3000/posts")
+    // fetch("https://tranquil-citadel-59605.herokuapp.com/posts")
         .then(r=>r.json())
         .then(the_posts=>{
     

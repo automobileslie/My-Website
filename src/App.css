@@ -65,17 +65,25 @@ color: rosybrown;
     }
   }
 
-.container-for-home-page-not-mounted{
+.container-for-home-page{
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin-top: 2%;
     margin-right: 15%;
-    margin-left: 15%;
+    margin-left: 15%
+}
+
+.top-container-loading{
+    width: 100%;
     animation-name: landing-heading;
     animation-timing-function : linear;
-    animation-duration : 8s;
+    animation-duration : 5s;
     animation-iteration-count : 1;
+}
+
+.top-container{
+    width: 100%;
 }
  
 @keyframes    landing-heading {
@@ -125,10 +133,6 @@ margin-top: 10%;
     flex-direction: column;
     margin-left: 2%;
 
-}
-
-.top-container{
-    width: 100%;
 }
 
 .home-page-featured-blog-heading{
