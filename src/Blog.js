@@ -7,7 +7,7 @@ class Blog extends React.Component{
 
     displayPosts=()=>{  
         if(this.props.posts.length < 1){
-            return <h1 className="messages-for-loading">Blog Posts Loading!</h1>
+            return <h1 className="loading">Blog Posts Loading!</h1>
         }
         else {
         return this.props.posts.map(post=>{

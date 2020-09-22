@@ -27,7 +27,32 @@ whichToRender=()=>{
 
     else{
 
-        return <div className = "container-for-home-page">
+        if(!this.props.initialLoadDone){
+
+        return <div className = "container-for-home-page-not-mounted">
+
+            <div className = "top-container">
+            <h1 className = "home-page-heading">Carlie Anglemire</h1>
+            <h2 className = "sub-heading">Full-Stack Software Engineer</h2>
+            </div>
+
+            {/* <div className = "bottom-container">
+                <div className = "featured-blog">
+                <img className = "home-page-images" onClick={()=>this.props.showPost("Python")}src={require("./Images/s_bread.jpeg")} alt={"Python"}></img>
+                <h2 className = "home-page-featured-blog-heading">Current Blog Post</h2>
+                </div>
+            <div className = "current-project">
+                <img className = "home-page-images" onClick={()=>this.props.expandProject(this.props.featuredProject)} src={require("./Images/United_States.jpg")} alt={"National Parks Trip Planner"}></img>
+                <h2 className = "home-page-current-project-heading">Recent Project</h2>
+            </div>
+        </div> */}
+
+    </div>
+
+        }
+
+        else{
+            return <div className = "container-for-home-page">
 
             <div className = "top-container">
             <h1 className = "home-page-heading">Carlie Anglemire</h1>
@@ -46,6 +71,7 @@ whichToRender=()=>{
         </div>
 
     </div>
+        }
 
 }
 

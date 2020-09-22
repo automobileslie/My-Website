@@ -19,7 +19,8 @@ export default class App extends React.Component{
     posts: [],
     expandPost: false,
     postToExpand: [],
-    resumeViewing: false
+    resumeViewing: false,
+    initialLoadDone: false
   }
 
   componentDidMount=()=>{
@@ -40,7 +41,8 @@ export default class App extends React.Component{
         .then(the_posts=>{
     
             this.setState({
-                posts: the_posts
+                posts: the_posts,
+                initialLoadDone: true
               })
         })
   }
@@ -50,6 +52,7 @@ export default class App extends React.Component{
     let postForExpanding= this.state.posts.find(post=>{
       return post.title.includes(the_post)
     })
+
     this.setState({
         expandPost: !this.state.expandPost,
         postToExpand: postForExpanding
@@ -133,6 +136,7 @@ return (
     <NavigationBar returnToProjects={this.returnToProjects}/>
   <Switch>
   <Route exact path= '/' render={(renderProps) => <Home {...renderProps} 
+  initialLoadDone={this.state.initialLoadDone}
    expandProject={this.expandProject}
    featuredProject={this.featuredProject()}
    projectExpanded={this.state.projectExpanded}

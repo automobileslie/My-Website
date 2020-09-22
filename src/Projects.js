@@ -31,7 +31,7 @@ class Projects extends React.Component{
                 <React.Fragment>
                 {this.props.projects.length < 1 ?
                     <React.Fragment>
-                    <h1>Projects Loading</h1>
+                    <h1 className= "loading">Projects Loading</h1>
                     </React.Fragment>
                     : 
                     <React.Fragment>

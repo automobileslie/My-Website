@@ -116,8 +116,6 @@ export default class ExpandPost extends React.Component{
 
                 let paragraphArray= paragraph.trim().split("this-is-an-image")
 
-                console.log(paragraphArray);
-
                 let newArrayForImage=paragraphArray.filter(description=>{
                     return description !=="this-is-an-image" || description !== ""
                 })
@@ -185,7 +183,7 @@ export default class ExpandPost extends React.Component{
 
             !(this.props.posts[0]) ?
                 <React.Fragment>
-                <h1 className= "heading">Loading</h1>
+                <h1 className="loading">Loading</h1>
                 </React.Fragment>
 
                 :
