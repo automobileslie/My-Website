@@ -26,6 +26,12 @@ color: rosybrown;
 
 /* style for home page */
 
+.home-page{
+    
+    margin: 2em;
+    text-align: center;
+}
+
 .loading{
     animation-duration: 10s;
     animation-name: loading;
@@ -72,15 +78,6 @@ color: rosybrown;
     }
   }
 
-.container-for-home-page{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 2%;
-    margin-right: 15%;
-    margin-left: 15%
-}
-
 .top-container-loading{
     width: 100%;
     animation-name: landing-heading;
@@ -102,29 +99,18 @@ color: rosybrown;
     100% {opacity: 1 }
 } 
 
-.container-for-home-page{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 2%;
-    margin-right: 15%;
-    margin-left: 15%;
-}
 
-.bottom-container{
+.container-for-the-features{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     flex-direction: row;
-    width: 100%;
-    animation-name: home-page-features;
-    animation-timing-function : linear;
-    animation-duration : 3s;
-    animation-iteration-count : 1;
 }
 
 @media screen and (max-width: 800px){
-    .bottom-container{
-margin-top: 10%;
+    .container-for-the-features{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
     }
 }
 
@@ -138,40 +124,34 @@ margin-top: 10%;
 } 
 
 .featured-blog{
-    width: 50%;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-right: 2%
-}
-
-.current-project{
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-left: 2%;
     animation-name: home-page-features;
     animation-timing-function : linear;
     animation-duration : 3s;
     animation-iteration-count : 1;
-
 }
 
-.home-page-featured-blog-heading{
-
-text-align: center;
-
-}
-
-.home-page-current-project-heading{
-text-align: center;
+.current-project{
+    display: flex;
+    justify-content: center;
+    flex-direction: column; 
+    animation-name: home-page-features;
+    animation-timing-function : linear;
+    animation-duration : 3s;
+    animation-iteration-count : 1;
 }
 
 .home-page-images{
-    width: 100%;
-    height: 85%
+    width: 30em;
 }
+
+@media screen and (max-width: 800px){
+    .home-page-images{
+        width: 100%
+    }
+    }
 
 .home-page-heading{
     font-size: 3em;
