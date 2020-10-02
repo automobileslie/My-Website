@@ -48,7 +48,7 @@ render(){
 
                     <div className="profile-description">
                     <p>Carlie Anglemire is a full-stack software developer passionate about exercising problem-solving skills and creativity in building applications that help users gain access to information, entertainment, resources, and social networks on-line​. 
-                    With experience in HTML, CSS, JavaScript, Ruby, Java, C, React, Ruby on Rails, and SQL, she became interested in software engineering after developing her logic and critical thinking skills as a Philosophy PhD focused on topics in ethics and aesthetics.</p> 
+                    With experience in HTML, CSS, JavaScript, Ruby, Python, Java, C, React, Ruby on Rails, and SQL, she became interested in software engineering after developing her logic and critical thinking skills as a Philosophy PhD focused on topics in ethics and aesthetics.</p> 
                     <p>In other words, she could, and sometimes does, spend all day splitting strings.</p>
                     <p>In addition to being a software engineer, Carlie is a published translator and loves writing, learning languages, cooking, and gardening.</p>
                     </div>
