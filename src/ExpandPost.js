@@ -104,6 +104,11 @@ export default class ExpandPost extends React.Component{
                 </div>
              }
 
+             else if (paragraph.includes("giphy")){
+               
+                return <iframe title= {paragraph} className="gif-for-blog-post" width='480' height='272' src={paragraph} frameborder="0" allow='autoplay' allowFullScreen alt= "paragraph"/>
+            }
+
             else if (paragraph.includes("this-is-an-image")) {
 
                 // if (post.title === "Time and Greetings in a JavaScript Function") {

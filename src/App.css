@@ -697,6 +697,20 @@ color: rosybrown;
     }
 }
 
+.gif-for-blog-post{
+   margin-left: 3em;
+   margin-bottom: 0em;
+   margin-top: 2em;
+   
+}
+
+@media screen and (max-height: 800px){
+    .gif-for-blog-post{
+        margin-left: 0em;
+        margin-bottom: 2em;
+    }
+}
+
 .heading-for-blog-expanded{
     text-align: center;
     margin: 3%
