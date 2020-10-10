@@ -701,7 +701,8 @@ color: rosybrown;
    margin-left: 3em;
    margin-bottom: 0em;
    margin-top: 2em;
-   
+   width: 25em;
+   height: 15em
 }
 
 @media screen and (max-height: 800px){
