@@ -705,10 +705,12 @@ color: rosybrown;
    height: 15em
 }
 
-@media screen and (max-height: 800px){
+@media screen and (max-height: 700px){
     .gif-for-blog-post{
         margin-left: 0em;
         margin-bottom: 2em;
+        width: 20em;
+        height: 15em
     }
 }
 
