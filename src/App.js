@@ -48,7 +48,6 @@ export default class App extends React.Component{
   }
 
   showPost=(the_post)=>{ 
-    console.log(the_post);
     let postForExpanding= this.state.posts.find(post=>{
       return post.title.includes(the_post)
     })

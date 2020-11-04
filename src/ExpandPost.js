@@ -183,7 +183,6 @@ export default class ExpandPost extends React.Component{
 
     render(){
 
-        console.log(this.props.posts[0])
         return(
 
             !(this.props.posts[0]) ?
