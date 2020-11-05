@@ -15,11 +15,8 @@ changeHovering = () =>{
 }
 
 
-
-
 render(){
 
-    console.log(this.state.isHovering)
     return(
 
         this.props.resumeViewing ?
