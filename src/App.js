@@ -24,7 +24,6 @@ export default class App extends React.Component{
     projectOnLandingPage: [],
     postOnLandingPage: [],
     landingPageProjectExpanded: false,
-    landingPagePostExpanded: false,
     postForFeaturedProject: [],
     landingPageProjectPostExpanded: false
   }
@@ -111,7 +110,7 @@ showLandingPagePost=(the_post)=>{
 returnToPosts=()=>{
     this.setState({
     expandPost: !this.state.expandPost,
-    postToExpand: []
+    postToExpand: [],
     })
 }
 
@@ -173,7 +172,6 @@ postsToSendDown=()=>{
       postToExpand: [],
       resumeViewing: false,
       landingPageProjectExpanded: false,
-      landingPagePostExpanded: [],
       landingPageProjectPostExpanded: false
     })
   } 
