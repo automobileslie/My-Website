@@ -26,28 +26,29 @@ class ProjectDisplay extends React.Component {
 
     showingBlog=()=>{
 
-        if (!this.props.expandPost) {
-
-            let thisVariable= this.props.posts.filter(post=>{
-                return post.title.includes(this.props.project.title)
-            })
-               
-            if (thisVariable.length > 0) { 
-                return <p className="link" onClick={()=>this.props.showPost(this.props.project.title)}>Go to the Blog Post about this project</p>
-            } 
-            else {
-                return  <div>
-                </div>
-            }
-        }
-        else {
+        if (this.props.expandPost) {
             return <div></div>
         }
-    }
+
+        else if(this.props.landingPageProjectExpanded){
+                return <p className="link" onClick={()=>this.props.showFeaturedProjectPost(this.props.postForFeaturedProject)}>Go to the Blog Post about this project</p>
+        }
+            else {
+                let thisVariable= this.props.posts.filter(post=>{
+                    return post.title.includes(this.props.project.title)
+                })
+                   
+                if (thisVariable.length > 0) { 
+                    return <p className="link" onClick={()=>this.props.showPost(this.props.project.title)}>Go to the Blog Post about this project</p>
+                } 
+            }
+        }
 
     render(){
+
+        console.log(this.props.expandPost, this.props.landingPageProjectExpanded, this.props.landingPageProjectPostExpanded)
     return(
-        <div className="project-show-pages"> {!this.props.expandPost && this.props.project ?
+        <div className="project-show-pages"> {(!this.props.expandPost && !this.props.landingPageProjectPostExpanded) && this.props.project ?
         <div className="container-for-project-display">
             <h1>{this.props.project.title}</h1>
             <br></br>
@@ -65,6 +66,13 @@ class ProjectDisplay extends React.Component {
             <br></br>
             <p className="return-to-projects-index" onClick={this.props.returnToProjects}>Return to Previous Page</p>
         </div>
+        :
+
+        this.props.landingPageProjectPostExpanded ?
+        <React.Fragment>
+        <ExpandPost  posts={this.props.postForFeaturedProject} returnToPosts={this.props.returnToProjects}/>
+        <p className="return-to-projects-index" onClick={this.props.returnToProjects}>Return to Previous Page</p>
+        </React.Fragment>
         :
         <React.Fragment>
         <ExpandPost  posts={this.props.posts} returnToPosts={this.props.returnToProjects}/>

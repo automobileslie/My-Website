@@ -9,19 +9,21 @@ whichToRender=()=>{
     if(this.props.expandPost) {
         
     return <React.Fragment>
-        <ExpandPost posts={this.props.posts}/>
+        <ExpandPost posts={this.props.postOnLandingPage}/>
     <p className= "return-to-projects-index" onClick={this.props.returnToPosts}>Return to Previous Page</p>
     </React.Fragment>
 
     }
 
-    else if(this.props.projectExpanded){
+    else if(this.props.landingPageProjectExpanded){
         return <ProjectDisplay 
-            project={this.props.projects} 
+            project={this.props.projectOnLandingPage} 
             returnToProjects={this.props.returnToProjects} 
-            showPost={this.props.showPost} 
+            showFeaturedProjectPost={this.props.showFeaturedProjectPost} 
             expandPost={this.props.expandPost}
-            posts={this.props.posts}
+            landingPageProjectExpanded={this.props.landingPageProjectExpanded}
+            landingPageProjectPostExpanded={this.props.landingPageProjectPostExpanded}
+            postForFeaturedProject={this.props.postForFeaturedProject}
         />
     }
 
@@ -48,11 +50,11 @@ whichToRender=()=>{
 
             <div className = "container-for-the-features">
                 <div className = "featured-blog">
-                <img className = "home-page-images" onClick={()=>this.props.showPost("Are We There Yet?")}src={require("./Images/flatten_arrays.png")} alt={"Python"}/>
+                <img className = "home-page-images" onClick={()=>this.props.showLandingPagePost("Are We There Yet?")}src={require("./Images/flatten_arrays.png")} alt={"Python"}/>
                 <h2 className = "home-page-featured-blog-heading">Current Blog Post</h2>
                 </div>
             <div className = "current-project">
-                <img className = "home-page-images" onClick={()=>this.props.expandProject(this.props.featuredProject)} src={require("./Images/United_States.jpg")} alt={"National Parks Trip Planner"}/>
+                <img className = "home-page-images" onClick={()=>this.props.expandLandingPageProject(this.props.projectOnLandingPage)} src={require("./Images/United_States.jpg")} alt={"National Parks Trip Planner"}/>
                 <h2 className = "home-page-current-project-heading">Recent Project</h2>
             </div>
         </div>

@@ -20,10 +20,47 @@ export default class App extends React.Component{
     expandPost: false,
     postToExpand: [],
     resumeViewing: false,
-    initialLoadDone: false
+    initialLoadDone: false,
+    projectOnLandingPage: [],
+    postOnLandingPage: [],
+    landingPageProjectExpanded: false,
+    landingPagePostExpanded: false,
+    postForFeaturedProject: [],
+    landingPageProjectPostExpanded: false
   }
 
   componentDidMount=()=>{
+
+    // fetch("http://localhost:3000/projects/141")
+
+    fetch("https://tranquil-citadel-59605.herokuapp.com/projects/141")
+    .then(r=>r.json())
+    .then(the_project=>{      
+      this.setState({
+        projectOnLandingPage: the_project,
+        initialLoadDone: true
+      })
+    })
+
+    // fetch("http://localhost:3000/posts/1399")
+    fetch("https://tranquil-citadel-59605.herokuapp.com/posts/1399")
+        .then(r=>r.json())
+        .then(the_post=>{
+            this.setState({
+                postOnLandingPage: [the_post],
+                initialLoadDone: true
+              })
+        })
+
+        // fetch("http://localhost:3000/posts/1430")
+        fetch("https://tranquil-citadel-59605.herokuapp.com/posts/1430")
+            .then(r=>r.json())
+            .then(the_post=>{
+                this.setState({
+                    postForFeaturedProject: [the_post],
+                    initialLoadDone: true
+                  })
+            })
 
     // fetch("http://localhost:3000/projects")
 
@@ -31,7 +68,7 @@ export default class App extends React.Component{
     .then(r=>r.json())
     .then(data=>{      
       this.setState({
-        projects: data
+        projects: data,
       })
     })
 
@@ -42,7 +79,6 @@ export default class App extends React.Component{
     
             this.setState({
                 posts: the_posts,
-                initialLoadDone: true
               })
         })
   }
@@ -56,6 +92,20 @@ export default class App extends React.Component{
         expandPost: !this.state.expandPost,
         postToExpand: postForExpanding
     })
+}
+
+showFeaturedProjectPost=()=>{
+  this.setState({
+      landingPageProjectPostExpanded: true,
+      postToExpand: this.state.postForFeaturedProject
+  })
+}
+
+showLandingPagePost=(the_post)=>{
+  this.setState({
+    expandPost: !this.state.expandPost,
+    postToExpand: the_post
+  })
 }
 
 returnToPosts=()=>{
@@ -87,12 +137,25 @@ postsToSendDown=()=>{
     })
   }
 
+  expandLandingPageProject=(project)=>{
+    this.setState({
+      landingPageProjectExpanded: true,
+      projectToExpand: project,
+      projectExpanded: false
+    })
+  }
+
   projectsToPassDown=()=>{
 
     let the_projects= [...this.state.projects]
 
     if (this.state.projectExpanded){
       the_projects= this.state.projectToExpand
+      return the_projects
+    }
+
+    else if(this.state.landingPageProjectExpanded){
+      the_projects = this.state.projectOnLandingPage
       return the_projects
     }
 
@@ -103,21 +166,23 @@ postsToSendDown=()=>{
   }
 
   returnToProjects=()=>{
-
     this.setState({
       projectToExpand: [],
       projectExpanded: false,
       expandPost: false,
       postToExpand: [],
-      resumeViewing: false
+      resumeViewing: false,
+      landingPageProjectExpanded: false,
+      landingPagePostExpanded: [],
+      landingPageProjectPostExpanded: false
     })
   } 
 
-  featuredProject=()=>{
-    return this.state.projects.find(project=>{
-      return project.title === "National Park Trip Planner"
-  })
-}
+//   featuredProject=()=>{
+//     return this.state.projects.find(project=>{
+//       return project.title === "National Park Trip Planner"
+//   })
+// }
 
 displayResume=()=>{
 
@@ -129,6 +194,7 @@ displayResume=()=>{
 
 render() {
 
+
 return (
 <div className="container-for-whole-page">
   <Router>
@@ -137,7 +203,7 @@ return (
   <Route exact path= '/' render={(renderProps) => <Home {...renderProps} 
   initialLoadDone={this.state.initialLoadDone}
    expandProject={this.expandProject}
-   featuredProject={this.featuredProject()}
+   featuredProject={this.projectOnLandingPage}
    projectExpanded={this.state.projectExpanded}
    projects={this.projectsToPassDown()} 
   returnToProjects={this.returnToProjects} 
@@ -146,6 +212,15 @@ return (
   posts={this.postsToSendDown()}
   returnToPosts={this.returnToPosts}
   postToExpand={this.state.postToExpand}
+  postOnLandingPage={this.state.postOnLandingPage}
+  projectOnLandingPage={this.state.projectOnLandingPage}
+  expandLandingPageProject={this.expandLandingPageProject}
+  landingPageProjectExpanded={this.state.landingPageProjectExpanded}
+  landingPagePostExpanded={this.state.landingPagePostExpanded}
+  showLandingPagePost={this.showLandingPagePost}
+  postForFeaturedProject={this.state.postForFeaturedProject}
+  landingPageProjectPostExpanded={this.state.landingPageProjectPostExpanded}
+  showFeaturedProjectPost={this.showFeaturedProjectPost}
   />}/>
   <Route exact path= '/about' render={(renderProps) => <About {...renderProps}
     displayResume={this.displayResume}
@@ -159,6 +234,13 @@ return (
   showPost={this.showPost}
   expandPost={this.state.expandPost}
   posts={this.postsToSendDown()}
+  projectOnLandingPage={this.state.projectOnLandingPage}
+  landingPageProjectExpanded={this.state.landingPageProjectExpanded}
+  projectToExpand={this.state.projectToExpand}
+  landingPageProjectPostExpanded={this.state.landingPageProjectPostExpanded}
+  showFeaturedProjectPost={this.showFeaturedProjectPost}
+  postForFeaturedProject={this.state.postForFeaturedProject}
+  showLandingPagePost={this.state.showLandingPagePost}
   />}/>
   <Route exact path= '/blog' render={(renderProps) => <Blog {...renderProps} 
   showPost={this.showPost} 
