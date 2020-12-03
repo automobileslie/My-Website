@@ -32,7 +32,7 @@ export default class App extends React.Component{
 
     // fetch("http://localhost:3000/projects/141")
 
-    fetch("https://tranquil-citadel-59605.herokuapp.com/projects/141")
+    fetch("https://tranquil-citadel-59605.herokuapp.com/projects/75")
     .then(r=>r.json())
     .then(the_project=>{      
       this.setState({
@@ -42,7 +42,7 @@ export default class App extends React.Component{
     })
 
     // fetch("http://localhost:3000/posts/1399")
-    fetch("https://tranquil-citadel-59605.herokuapp.com/posts/1399")
+    fetch("https://tranquil-citadel-59605.herokuapp.com/posts/1")
         .then(r=>r.json())
         .then(the_post=>{
             this.setState({
@@ -52,7 +52,7 @@ export default class App extends React.Component{
         })
 
         // fetch("http://localhost:3000/posts/1430")
-        fetch("https://tranquil-citadel-59605.herokuapp.com/posts/1430")
+        fetch("https://tranquil-citadel-59605.herokuapp.com/posts/25")
             .then(r=>r.json())
             .then(the_post=>{
                 this.setState({
