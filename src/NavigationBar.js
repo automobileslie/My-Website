@@ -2,9 +2,7 @@ import React from 'react';
 import {NavLink} from 'react-router-dom';
 import './NavBar.css'
 
-
     const NavigationBar =(props)=> {
-
        return <nav className="navbar">
          <NavLink
            onClick={props.returnToProjects}

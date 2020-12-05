@@ -8,8 +8,6 @@ import Publications from './Publications'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css';
 
-
-
 export default class App extends React.Component{
 
   state={
@@ -29,9 +27,7 @@ export default class App extends React.Component{
   }
 
   componentDidMount=()=>{
-
     // fetch("http://localhost:3000/projects/141")
-
     fetch("https://tranquil-citadel-59605.herokuapp.com/projects/75")
     .then(r=>r.json())
     .then(the_project=>{      
@@ -62,7 +58,6 @@ export default class App extends React.Component{
             })
 
     // fetch("http://localhost:3000/projects")
-
     fetch("https://tranquil-citadel-59605.herokuapp.com/projects")
     .then(r=>r.json())
     .then(data=>{      
@@ -115,18 +110,14 @@ returnToPosts=()=>{
 }
 
 postsToSendDown=()=>{
-
   let the_posts= [...this.state.posts]
-
   if (this.state.expandPost){
     the_posts= [this.state.postToExpand]
     return the_posts
   }
-
   else {
     return the_posts
   }
-
 }
 
   expandProject=(project)=>{
@@ -145,23 +136,18 @@ postsToSendDown=()=>{
   }
 
   projectsToPassDown=()=>{
-
     let the_projects= [...this.state.projects]
-
     if (this.state.projectExpanded){
       the_projects= this.state.projectToExpand
       return the_projects
     }
-
     else if(this.state.landingPageProjectExpanded){
       the_projects = this.state.projectOnLandingPage
       return the_projects
     }
-
     else {
       return the_projects
     }
-
   }
 
   returnToProjects=()=>{
@@ -176,83 +162,65 @@ postsToSendDown=()=>{
     })
   } 
 
-//   featuredProject=()=>{
-//     return this.state.projects.find(project=>{
-//       return project.title === "National Park Trip Planner"
-//   })
-// }
-
 displayResume=()=>{
-
   this.setState({
     resumeViewing: !this.state.resumeViewing
   })
-
 }
 
 render() {
-
-
 return (
 <div className="container-for-whole-page">
   <Router>
     <NavigationBar returnToProjects={this.returnToProjects}/>
   <Switch>
   <Route exact path= '/' render={(renderProps) => <Home {...renderProps} 
-  initialLoadDone={this.state.initialLoadDone}
-   expandProject={this.expandProject}
-   featuredProject={this.projectOnLandingPage}
-   projectExpanded={this.state.projectExpanded}
-   projects={this.projectsToPassDown()} 
-  returnToProjects={this.returnToProjects} 
-  showPost={this.showPost} 
-  expandPost={this.state.expandPost}
-  posts={this.postsToSendDown()}
-  returnToPosts={this.returnToPosts}
-  postToExpand={this.state.postToExpand}
-  postOnLandingPage={this.state.postOnLandingPage}
-  projectOnLandingPage={this.state.projectOnLandingPage}
-  expandLandingPageProject={this.expandLandingPageProject}
-  landingPageProjectExpanded={this.state.landingPageProjectExpanded}
-  landingPagePostExpanded={this.state.landingPagePostExpanded}
-  showLandingPagePost={this.showLandingPagePost}
-  postForFeaturedProject={this.state.postForFeaturedProject}
-  landingPageProjectPostExpanded={this.state.landingPageProjectPostExpanded}
-  showFeaturedProjectPost={this.showFeaturedProjectPost}
+    initialLoadDone={this.state.initialLoadDone}
+    expandProject={this.expandProject}
+    featuredProject={this.projectOnLandingPage}
+    projectExpanded={this.state.projectExpanded}
+    projects={this.projectsToPassDown()} 
+    returnToProjects={this.returnToProjects} 
+    showPost={this.showPost} 
+    expandPost={this.state.expandPost}
+    posts={this.postsToSendDown()}
+    returnToPosts={this.returnToPosts}
+    postToExpand={this.state.postToExpand}
+    postOnLandingPage={this.state.postOnLandingPage}
+    projectOnLandingPage={this.state.projectOnLandingPage}
+    expandLandingPageProject={this.expandLandingPageProject}
+    landingPageProjectExpanded={this.state.landingPageProjectExpanded}
+    landingPagePostExpanded={this.state.landingPagePostExpanded}
+    showLandingPagePost={this.showLandingPagePost}
+    postForFeaturedProject={this.state.postForFeaturedProject}
+    landingPageProjectPostExpanded={this.state.landingPageProjectPostExpanded}
+    showFeaturedProjectPost={this.showFeaturedProjectPost}
   />}/>
   <Route exact path= '/about' render={(renderProps) => <About {...renderProps}
     displayResume={this.displayResume}
     resumeViewing={this.state.resumeViewing}
   />}/>
   <Route exact path= '/projects' render={(renderProps) => <Projects {...renderProps} 
-  projects={this.projectsToPassDown()}
-  projectExpanded={this.state.projectExpanded}
-  expandProject={this.expandProject}
-  returnToProjects={this.returnToProjects}
-  showPost={this.showPost}
-  expandPost={this.state.expandPost}
-  posts={this.postsToSendDown()}
-  projectOnLandingPage={this.state.projectOnLandingPage}
-  landingPageProjectExpanded={this.state.landingPageProjectExpanded}
-  projectToExpand={this.state.projectToExpand}
-  landingPageProjectPostExpanded={this.state.landingPageProjectPostExpanded}
-  showFeaturedProjectPost={this.showFeaturedProjectPost}
-  postForFeaturedProject={this.state.postForFeaturedProject}
-  showLandingPagePost={this.state.showLandingPagePost}
+    projects={this.projectsToPassDown()}
+    projectExpanded={this.state.projectExpanded}
+    expandProject={this.expandProject}
+    returnToProjects={this.returnToProjects}
+    showPost={this.showPost}
+    expandPost={this.state.expandPost}
+    posts={this.postsToSendDown()}
+    projectToExpand={this.state.projectToExpand}
   />}/>
   <Route exact path= '/blog' render={(renderProps) => <Blog {...renderProps} 
-  showPost={this.showPost} 
-  returnToPosts={this.returnToPosts}
-  posts={this.postsToSendDown()}
-  postToExpand={this.state.postToExpand}
-  expandPost={this.state.expandPost}
+    showPost={this.showPost} 
+    returnToPosts={this.returnToPosts}
+    posts={this.postsToSendDown()}
+    postToExpand={this.state.postToExpand}
+    expandPost={this.state.expandPost}
   />}/>
   <Route exact path= '/publications' render={(renderProps) => <Publications {...renderProps} />}/>
-
   </Switch>
   </Router>
 </div>
   );
 }
-
 }

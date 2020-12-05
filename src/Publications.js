@@ -14,7 +14,6 @@ displayBooks=()=>{
         return <div className="publication-book-tile">
         <img onClick={()=> this.clickBook(book)} className="book-image" src={require(`${book.image.trim()}`)} alt={book.title} />
         </div>
-   
     })
 }
 
@@ -41,7 +40,6 @@ returnToPublicationsPage=()=>{
             </div>
             </React.Fragment>
         }
-
         else {
             return <PublicationShowPage bookExpanded={this.state.bookExpanded} returnToPublicationsPage={this.returnToPublicationsPage}/>
         }
@@ -50,8 +48,7 @@ returnToPublicationsPage=()=>{
     render(){
         return(
             <div className="container-for-publication-index">
-                {this.whichToDisplay()}
-                
+                {this.whichToDisplay()}    
             </div>
         )
     }

@@ -673,7 +673,6 @@ color: rosybrown;
 }
 
 .video-container-for-blog{
-    /* /* text-align: center; */
     margin-right: 33%;
     margin-left: 20%;
     margin-bottom: 5%;
@@ -688,7 +687,6 @@ color: rosybrown;
 
 .video-for-blog-post{
     width: 100%
-   
 }
 
 @media screen and (max-height: 800px){

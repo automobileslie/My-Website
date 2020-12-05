@@ -2,9 +2,7 @@ import React from 'react';
 import ProjectDisplay from './ProjectDisplay';
 
 class Projects extends React.Component{
-
     displayProjectTiles=()=>{
-
         return this.props.projects.map(project=>{
             return <React.Fragment>
                     <div className="project-tile" onClick={()=>this.props.expandProject(project)}>
@@ -12,7 +10,6 @@ class Projects extends React.Component{
                     <p key={project.id} className="titles-for-project-index">{project.title}</p>
                     </div>
                     </React.Fragment>
-
         })
     }
 
@@ -23,17 +20,6 @@ class Projects extends React.Component{
             showPost={this.props.showPost} 
             expandPost={this.props.expandPost}
             posts={this.props.posts}/>
-
-        }
-        else if(this.props.landingPageProjectExpanded){
-            return <ProjectDisplay project={this.props.projectOnLandingPage} 
-            returnToProjects={this.props.returnToProjects} 
-            showFeaturedProjectPost={this.props.showFeaturedProjectPost} 
-            expandPost={this.props.expandPost}
-            landingPageProjectExpanded={this.props.landingPageProjectExpanded}
-            landingPageProjectPostExpanded={this.props.landingPageProjectPostExpanded}
-            postForFeaturedProject={this.props.postForFeaturedProject}
-            />
         }
         else{
             if(this.props.projects.length < 1){
@@ -55,9 +41,6 @@ class Projects extends React.Component{
     }
 
     render(){
-
-       console.log(this.props.landingPageProjectExpanded)
-
         return(
             this.whichToRender()      
         )

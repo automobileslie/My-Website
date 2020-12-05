@@ -2,20 +2,12 @@ import React from 'react';
 
 export default class PublicationShowPage extends React.Component{
 
-
-
-
 italicizeTheTitle=()=>{
-
     if (this.props.bookExpanded.description.includes("/title")) {
     let newDescription= this.props.bookExpanded.description.split("/title")
-
         let changeTheDescription=newDescription.filter(description=>{
                             return description !=="/title"
                         })
-
-                    console.log(changeTheDescription)
-
                        return <React.Fragment>
                            <p>
                             <i>{changeTheDescription[0]}</i>
@@ -23,9 +15,7 @@ italicizeTheTitle=()=>{
                            <a className="link" target="_blank" rel="noopener noreferrer" href="https://www.stonybrook.edu/commcms/philosophy/people/_faculty/byrne.php">{changeTheDescription[2]}</a>
                            {changeTheDescription[3]}
                            </p>
-                           </React.Fragment>
-                            
-                        
+                           </React.Fragment>   
                     }
     else {
         return  <p>

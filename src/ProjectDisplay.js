@@ -8,20 +8,16 @@ import ExpandPost from './ExpandPost';
 
 
 class ProjectDisplay extends React.Component {
-
     videoToRender=()=>{
        if (this.props.project.title=== "Plan a Garden") {
             return videoOne
         }
-
         else if (this.props.project.title==="Book and Movie Memory Bank") {
             return videoTwo
         }
-
         else if (this.props.project.title==="National Park Trip Planner"){
             return videoThree
         }
-
     }
 
     showingBlog=()=>{
@@ -29,7 +25,6 @@ class ProjectDisplay extends React.Component {
         if (this.props.expandPost) {
             return <div></div>
         }
-
         else if(this.props.landingPageProjectExpanded){
                 return <p className="link" onClick={()=>this.props.showFeaturedProjectPost(this.props.postForFeaturedProject)}>Go to the Blog Post about this project</p>
         }
@@ -45,8 +40,6 @@ class ProjectDisplay extends React.Component {
         }
 
     render(){
-
-        console.log(this.props.expandPost, this.props.landingPageProjectExpanded, this.props.landingPageProjectPostExpanded)
     return(
         <div className="project-show-pages"> {(!this.props.expandPost && !this.props.landingPageProjectPostExpanded) && this.props.project ?
         <div className="container-for-project-display">
@@ -67,7 +60,6 @@ class ProjectDisplay extends React.Component {
             <p className="return-to-projects-index" onClick={this.props.returnToProjects}>Return to Previous Page</p>
         </div>
         :
-
         this.props.landingPageProjectPostExpanded ?
         <React.Fragment>
         <ExpandPost  posts={this.props.postForFeaturedProject} returnToPosts={this.props.returnToProjects}/>
