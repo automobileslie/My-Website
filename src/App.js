@@ -56,25 +56,6 @@ export default class App extends React.Component{
                     initialLoadDone: true
                   })
             })
-
-    // fetch("http://localhost:3000/projects")
-    fetch("https://tranquil-citadel-59605.herokuapp.com/projects")
-    .then(r=>r.json())
-    .then(data=>{      
-      this.setState({
-        projects: data,
-      })
-    })
-
-    // fetch("http://localhost:3000/posts")
-    fetch("https://tranquil-citadel-59605.herokuapp.com/posts")
-        .then(r=>r.json())
-        .then(the_posts=>{
-    
-            this.setState({
-                posts: the_posts,
-              })
-        })
   }
 
   showPost=(the_post)=>{ 
@@ -162,6 +143,44 @@ postsToSendDown=()=>{
     })
   } 
 
+clickOnProjectTab=()=>{
+  if(this.state.projects.length < 1){
+    // fetch("http://localhost:3000/projects")
+    fetch("https://tranquil-citadel-59605.herokuapp.com/projects")
+    .then(r=>r.json())
+    .then(data=>{      
+      this.setState({
+        projects: data,
+      })
+    })
+  }
+  this.returnToProjects()
+}
+
+clickOnBlogTab=()=>{
+  if(this.state.posts.length < 1){
+    //  fetch("http://localhost:3000/posts")
+    fetch("https://tranquil-citadel-59605.herokuapp.com/posts")
+        .then(r=>r.json())
+        .then(the_posts=>{
+            this.setState({
+                posts: the_posts,
+              })
+        })    
+  }
+  this.returnToProjects()
+}
+
+clickOnAboutPublicationsOrHomeTab=()=>{
+  if(this.state.posts.length < 1){
+   this.clickOnBlogTab()
+  }
+  if(this.state.projects.length < 1){
+    this.clickOnProjectTab()
+  }
+  this.returnToProjects()
+}
+
 displayResume=()=>{
   this.setState({
     resumeViewing: !this.state.resumeViewing
@@ -172,7 +191,11 @@ render() {
 return (
 <div className="container-for-whole-page">
   <Router>
-    <NavigationBar returnToProjects={this.returnToProjects}/>
+    <NavigationBar 
+    clickOnBlogTab={this.clickOnBlogTab}
+    clickOnProjectTab={this.clickOnProjectTab}
+    clickOnAboutPublicationsOrHomeTab={this.clickOnAboutPublicationsOrHomeTab}
+    />
   <Switch>
   <Route exact path= '/' render={(renderProps) => <Home {...renderProps} 
     initialLoadDone={this.state.initialLoadDone}
