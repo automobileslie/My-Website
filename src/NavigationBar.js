@@ -5,7 +5,7 @@ import './NavBar.css'
     const NavigationBar =(props)=> {
        return <nav className="navbar">
          <NavLink
-           onClick={props.clickOnAboutPublicationsOrHomeTab}
+           onClick={props.returnToProjects}
             exact
             activeClassName="navbar-link-active"
             className="navbar-link"
@@ -14,7 +14,7 @@ import './NavBar.css'
             Home
           </NavLink>
           <NavLink
-           onClick={props.clickOnAboutPublicationsOrHomeTab}
+           onClick={props.clickOnAboutOrPublicationsTab}
             exact
             activeClassName="navbar-link-active"
             className="navbar-link"
@@ -39,7 +39,7 @@ import './NavBar.css'
             Blog
           </NavLink>
           <NavLink
-           onClick={props.clickOnAboutPublicationsOrHomeTab}
+           onClick={props.clickOnAboutOrPublicationsTab}
             activeClassName="navbar-link-active"
             className="navbar-link"
             to="/Publications"

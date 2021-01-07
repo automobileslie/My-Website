@@ -99,19 +99,12 @@ color: rosybrown;
     100% {opacity: 1 }
 } 
 
-
 .container-for-the-features{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-direction: row;
-}
-
-@media screen and (max-width: 800px){
-    .container-for-the-features{
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-    }
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 @keyframes    home-page-features {
@@ -131,6 +124,11 @@ color: rosybrown;
     animation-timing-function : linear;
     animation-duration : 3s;
     animation-iteration-count : 1;
+    height: 20em;
+    flex-basis: 25em;
+    min-width: 30%;
+    align-self: center;
+    margin: 1%
 }
 
 .current-project{
@@ -141,17 +139,26 @@ color: rosybrown;
     animation-timing-function : linear;
     animation-duration : 3s;
     animation-iteration-count : 1;
+    height: 20em;
+    flex-basis: 25em;
+    min-width: 30%;
+    align-self: center;
+    margin: 1%
 }
 
 .home-page-images{
-    width: 30em;
+    align-self: center;
+    width: 100%;
+    height: 15em
 }
 
-@media screen and (max-width: 800px){
-    .home-page-images{
-        width: 100%
-    }
-    }
+.home-page-featured-blog-heading{
+    align-self: center;
+}
+
+.home-page-current-project-heading{
+    align-self: center;
+}
 
 .home-page-heading{
     font-size: 3em;
@@ -162,12 +169,6 @@ color: rosybrown;
     text-align: center;
     margin-bottom: 5%; 
 }
-
-@media screen and (max-width: 800px){
-    .sub-heading{
-        margin-bottom: 8%;
-    }
-    }
 
 /* style for projects */
 

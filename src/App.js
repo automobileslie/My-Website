@@ -171,7 +171,7 @@ clickOnBlogTab=()=>{
   this.returnToProjects()
 }
 
-clickOnAboutPublicationsOrHomeTab=()=>{
+clickOnAboutOrPublicationsTab=()=>{
   if(this.state.posts.length < 1){
    this.clickOnBlogTab()
   }
@@ -194,7 +194,8 @@ return (
     <NavigationBar 
     clickOnBlogTab={this.clickOnBlogTab}
     clickOnProjectTab={this.clickOnProjectTab}
-    clickOnAboutPublicationsOrHomeTab={this.clickOnAboutPublicationsOrHomeTab}
+    clickOnAboutOrPublicationsTab={this.clickOnAboutOrPublicationsTab}
+    returnToProjects={this.returnToProjects}
     />
   <Switch>
   <Route exact path= '/' render={(renderProps) => <Home {...renderProps} 
