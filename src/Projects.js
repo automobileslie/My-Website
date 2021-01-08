@@ -29,11 +29,9 @@ class Projects extends React.Component{
             }
             else{
                 return <React.Fragment>
-                <div className="project-index-container">
                 <h1 className="messages-for-loading">Projects</h1>
                 <div className="project-tile-container">
                 {this.displayProjectTiles()}
-                </div>
                 </div>
                 </React.Fragment>
             }
