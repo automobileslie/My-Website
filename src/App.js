@@ -27,28 +27,29 @@ export default class App extends React.Component{
   }
 
   componentDidMount=()=>{
-    // fetch("http://localhost:3000/projects/141")
-    fetch("https://tranquil-citadel-59605.herokuapp.com/projects/75")
+    // fetch("http://localhost:3000/projects/159")
+    fetch("https://tranquil-citadel-59605.herokuapp.com/projects/81")
     .then(r=>r.json())
-    .then(the_project=>{      
+    .then(the_project=>{  
       this.setState({
         projectOnLandingPage: the_project,
         initialLoadDone: true
       })
     })
 
-    // fetch("http://localhost:3000/posts/1399")
-    fetch("https://tranquil-citadel-59605.herokuapp.com/posts/1")
+    // fetch("http://localhost:3000/posts/1620")
+    fetch("https://tranquil-citadel-59605.herokuapp.com/posts")
         .then(r=>r.json())
         .then(the_post=>{
             this.setState({
                 postOnLandingPage: [the_post],
                 initialLoadDone: true
-              })
+              })              
+              
         })
 
-        // fetch("http://localhost:3000/posts/1430")
-        fetch("https://tranquil-citadel-59605.herokuapp.com/posts/25")
+        // fetch("http://localhost:3000/posts/1645")
+        fetch("https://tranquil-citadel-59605.herokuapp.com/posts/98")
             .then(r=>r.json())
             .then(the_post=>{
                 this.setState({
@@ -145,8 +146,8 @@ postsToSendDown=()=>{
 
 clickOnProjectTab=()=>{
   if(this.state.projects.length < 1){
-    // fetch("http://localhost:3000/projects")
-    fetch("https://tranquil-citadel-59605.herokuapp.com/projects")
+    fetch("http://localhost:3000/projects")
+    // fetch("https://tranquil-citadel-59605.herokuapp.com/projects")
     .then(r=>r.json())
     .then(data=>{      
       this.setState({
@@ -156,22 +157,16 @@ clickOnProjectTab=()=>{
   }
 
   if(this.state.posts.length < 1){
-    //  fetch("http://localhost:3000/posts")
-    fetch("https://tranquil-citadel-59605.herokuapp.com/posts")
-        .then(r=>r.json())
-        .then(the_posts=>{
-            this.setState({
-                posts: the_posts,
-              })
-        })    
+    this.clickOnBlogTab()   
   }
+
   this.returnToProjects()
 }
 
 clickOnBlogTab=()=>{
   if(this.state.posts.length < 1){
-    //  fetch("http://localhost:3000/posts")
-    fetch("https://tranquil-citadel-59605.herokuapp.com/posts")
+     fetch("http://localhost:3000/posts")
+    // fetch("https://tranquil-citadel-59605.herokuapp.com/posts")
         .then(r=>r.json())
         .then(the_posts=>{
             this.setState({
@@ -199,6 +194,7 @@ displayResume=()=>{
 }
 
 render() {
+  console.log(this.state.posts)
 return (
 <div className="container-for-whole-page">
   <Router>

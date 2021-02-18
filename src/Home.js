@@ -38,7 +38,7 @@ whichToRender=()=>{
             </div>
             <div className = "container-for-the-features">
                 <div className = "featured-blog">
-                <img className = "home-page-images" onClick={()=>this.props.showLandingPagePost("Are We There Yet?")}src={require("./Images/flatten_arrays.png")} alt={"Python"}/>
+                <img className = "home-page-images" onClick={()=>this.props.showLandingPagePost("Ordering Strings for the Good of the People")}src={require("./Images/for the good of the people.png")} alt={"Ordering Strings For the Good of the People"}/>
                 <h2 className = "home-page-featured-blog-heading">Current Blog Post</h2>
                 </div>
             <div className = "current-project">
