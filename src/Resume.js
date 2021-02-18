@@ -10,7 +10,7 @@ export default class Resume extends React.Component{
 
         <div className="resume-container">
  
- <iframe title="resume" src={require("./Copy of Carlie Anglemire resume.pdf")} className="resume"/>
+ <iframe title="resume" src={require("./Carlie_Anglemire_resume.pdf")} className="resume"/>
 </div>
     )
  }
