@@ -38,7 +38,7 @@ export default class App extends React.Component{
     })
 
     // fetch("http://localhost:3000/posts/1620")
-    fetch("https://tranquil-citadel-59605.herokuapp.com/posts")
+    fetch("https://tranquil-citadel-59605.herokuapp.com/posts/73")
         .then(r=>r.json())
         .then(the_post=>{
             this.setState({
