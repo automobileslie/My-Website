@@ -159,6 +159,7 @@ color: rosybrown;
 .home-page-heading{
     font-size: 3em;
     text-align: center;
+    flex-shrink: 0
 }
 
 .sub-heading{

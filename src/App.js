@@ -154,6 +154,17 @@ clickOnProjectTab=()=>{
       })
     })
   }
+
+  if(this.state.posts.length < 1){
+    //  fetch("http://localhost:3000/posts")
+    fetch("https://tranquil-citadel-59605.herokuapp.com/posts")
+        .then(r=>r.json())
+        .then(the_posts=>{
+            this.setState({
+                posts: the_posts,
+              })
+        })    
+  }
   this.returnToProjects()
 }
 
