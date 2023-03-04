@@ -22,7 +22,7 @@ class Blog extends React.Component{
             <div>
                 <h1 className="blog-index-heading">Blog</h1>
                 <div className="container-for-blog-index">
-                <p className="blog-intro">Blog posts can be found <a className="link" href="https://medium.com/@carlie.anglemire" target = "_blank" rel="noopener noreferrer">here</a>!</p>
+                <p className="blog-intro">Blog posts can be found <a className="link" href="https://medium.com/@carlie.anglemire" target = "_blank" rel="noopener noreferrer">here</a></p>
                 <div className="blog-list">
                 {/* {this.displayPosts()} */}
                 </div>      
