@@ -462,10 +462,9 @@ color: rosybrown;
 .links-on-about-page{
     margin-top: 2%;
     margin-bottom: 2%;
-    margin-left: 2%;
     margin-right: 2%;
     display: flex;
-    justify-content: center;
+    justify-content: left;
 }
 
 @media screen and (max-width: 800px){
@@ -710,9 +709,7 @@ color: rosybrown;
 }
 
 .blog-intro{
-    text-align: left;
-    width: 80%;
-    line-height: 150%;
+    text-align: center;
     margin-top: 1%;
     margin-right: 5%;
     font-weight: 125%;

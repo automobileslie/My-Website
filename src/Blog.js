@@ -22,16 +22,16 @@ class Blog extends React.Component{
             <div>
                 <h1 className="blog-index-heading">Blog</h1>
                 <div className="container-for-blog-index">
-                <p className="blog-intro">These posts can also be found <a className="link" href="https://medium.com/@carlie.anglemire" target = "_blank" rel="noopener noreferrer">here</a>.</p>
+                <p className="blog-intro">Blog posts can be found <a className="link" href="https://medium.com/@carlie.anglemire" target = "_blank" rel="noopener noreferrer">here</a>!</p>
                 <div className="blog-list">
-                {this.displayPosts()}
+                {/* {this.displayPosts()} */}
                 </div>      
                 </div>
             </div>
         :
             <React.Fragment>
             <ExpandPost posts={this.props.posts}/>
-            <p className= "return-to-projects-index" onClick={this.props.returnToPosts}>Return to List of Blog Posts</p>
+            {/* <p className= "return-to-projects-index" onClick={this.props.returnToPosts}>Return to List of Blog Posts</p> */}
             </React.Fragment>
         }
         </React.Fragment>

@@ -5,6 +5,7 @@ import Projects from './Projects';
 import Blog from './Blog';
 import About from './About';
 import Publications from './Publications'
+import Resume from './Resume'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css';
 
@@ -28,35 +29,35 @@ export default class App extends React.Component{
 
   componentDidMount=()=>{
     // fetch("http://localhost:3000/projects/159")
-    fetch("https://tranquil-citadel-59605.herokuapp.com/projects/81")
-    .then(r=>r.json())
-    .then(the_project=>{  
-      this.setState({
-        projectOnLandingPage: the_project,
-        initialLoadDone: true
-      })
-    })
+    // fetch("https://tranquil-citadel-59605.herokuapp.com/projects/81")
+    // .then(r=>r.json())
+    // .then(the_project=>{  
+    //   this.setState({
+    //     projectOnLandingPage: the_project,
+    //     initialLoadDone: true
+    //   })
+    // })
 
     // fetch("http://localhost:3000/posts/1620")
-    fetch("https://tranquil-citadel-59605.herokuapp.com/posts/73")
-        .then(r=>r.json())
-        .then(the_post=>{
-            this.setState({
-                postOnLandingPage: [the_post],
-                initialLoadDone: true
-              })              
+    // fetch("https://tranquil-citadel-59605.herokuapp.com/posts/73")
+    //     .then(r=>r.json())
+    //     .then(the_post=>{
+    //         this.setState({
+    //             postOnLandingPage: [the_post],
+    //             initialLoadDone: true
+    //           })              
               
-        })
+    //     })
 
         // fetch("http://localhost:3000/posts/1645")
-        fetch("https://tranquil-citadel-59605.herokuapp.com/posts/98")
-            .then(r=>r.json())
-            .then(the_post=>{
-                this.setState({
-                    postForFeaturedProject: [the_post],
-                    initialLoadDone: true
-                  })
-            })
+        // fetch("https://tranquil-citadel-59605.herokuapp.com/posts/98")
+        //     .then(r=>r.json())
+        //     .then(the_post=>{
+        //         this.setState({
+        //             postForFeaturedProject: [the_post],
+        //             initialLoadDone: true
+        //           })
+        //     })
   }
 
   showPost=(the_post)=>{ 
@@ -145,35 +146,35 @@ postsToSendDown=()=>{
   } 
 
 clickOnProjectTab=()=>{
-  if(this.state.projects.length < 1){
-    // fetch("http://localhost:3000/projects")
-    fetch("https://tranquil-citadel-59605.herokuapp.com/projects")
-    .then(r=>r.json())
-    .then(data=>{      
-      this.setState({
-        projects: data,
-      })
-    })
-  }
+  // if(this.state.projects.length < 1){
+  //   // fetch("http://localhost:3000/projects")
+  //   fetch("https://tranquil-citadel-59605.herokuapp.com/projects")
+  //   .then(r=>r.json())
+  //   .then(data=>{      
+  //     this.setState({
+  //       projects: data,
+  //     })
+  //   })
+  // }
 
-  if(this.state.posts.length < 1){
-    this.clickOnBlogTab()   
-  }
+  // if(this.state.posts.length < 1){
+  //   this.clickOnBlogTab()   
+  // }
 
-  this.returnToProjects()
+  // this.returnToProjects()
 }
 
 clickOnBlogTab=()=>{
-  if(this.state.posts.length < 1){
-    //  fetch("http://localhost:3000/posts")
-    fetch("https://tranquil-citadel-59605.herokuapp.com/posts")
-        .then(r=>r.json())
-        .then(the_posts=>{
-            this.setState({
-                posts: the_posts,
-              })
-        })    
-  }
+  // if(this.state.posts.length < 1){
+  //   //  fetch("http://localhost:3000/posts")
+  //   fetch("https://tranquil-citadel-59605.herokuapp.com/posts")
+  //       .then(r=>r.json())
+  //       .then(the_posts=>{
+  //           this.setState({
+  //               posts: the_posts,
+  //             })
+  //       })    
+  // }
   this.returnToProjects()
 }
 
@@ -231,7 +232,7 @@ return (
     displayResume={this.displayResume}
     resumeViewing={this.state.resumeViewing}
   />}/>
-  <Route exact path= '/projects' render={(renderProps) => <Projects {...renderProps} 
+  {/* <Route exact path= '/projects' render={(renderProps) => <Projects {...renderProps} 
     projects={this.projectsToPassDown()}
     projectExpanded={this.state.projectExpanded}
     expandProject={this.expandProject}
@@ -240,7 +241,7 @@ return (
     expandPost={this.state.expandPost}
     posts={this.postsToSendDown()}
     projectToExpand={this.state.projectToExpand}
-  />}/>
+  />}/> */}
   <Route exact path= '/blog' render={(renderProps) => <Blog {...renderProps} 
     showPost={this.showPost} 
     returnToPosts={this.returnToPosts}
@@ -249,6 +250,8 @@ return (
     expandPost={this.state.expandPost}
   />}/>
   <Route exact path= '/publications' render={(renderProps) => <Publications {...renderProps} />}/>
+  <Route exact path= '/resume' render={(renderProps) => <Resume {...renderProps} />}/>
+
   </Switch>
   </Router>
 </div>
