@@ -469,7 +469,8 @@ color: rosybrown;
 
 @media screen and (max-width: 800px){
     .links-on-about-page{
-        margin-bottom: 15%
+        margin-bottom: 15%;
+        justify-content: center
     }
 }
 
